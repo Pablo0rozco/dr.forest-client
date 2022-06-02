@@ -4,11 +4,11 @@ import { verifyService } from "../services/auth.services";
 const AuthContext = createContext();
 
 function AuthWrapper(props) {
-  // todos los estados y funciones
+  //! Estados y funciones que modifican
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
   const [isLoadingUser, setIsLoadingUser ] = useState(true)
-
+  console.log(isLoggedIn)
   const authenticateUser = async () => {
     setIsLoadingUser(true)
     try {
