@@ -31,7 +31,6 @@ function Home() {
       {allServices.map((eachService) => {
         return (
           <Link to={`/servicios/${eachService._id}/detalles`}>
-            {" "}
             <div>
               <h2>{eachService.nombre} </h2>
               <img src={eachService.img} alt="" />
