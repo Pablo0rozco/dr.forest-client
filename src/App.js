@@ -6,6 +6,7 @@ import Signup from "./pages/auth/Signup";
 import Error from "./pages/Error";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
+import CrearS from "./pages/servicios/CrearS";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        
+        <Route path="/servicios/crear" element={<CrearS />} />
 
         {/* rutas error FE */}
         <Route path="/error" element={<Error />} />
