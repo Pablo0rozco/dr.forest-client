@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
-function presupuestos() {
+import { useNavigate } from "react-router-dom";
+import { crearPresupuestoService } from "../../services/presupuestos.services.js";
+
+function Presupuestos() {
+    const navigate = useNavigate()
   const [form, setForm] = useState({
     fecha: "",
     direction: "",
@@ -21,13 +25,31 @@ function presupuestos() {
     const formCopy = { ...form };
 
     formCopy[e.target.value] = e.target.value;
+
     setForm(formCopy);
   };
-  const handleAddPresupuesto = () => {};
+  const handleAddPresupuesto = async () => {
+    try {
+        const presupuesto = {
+          form,
+        };
+        console.log(presupuesto);
+        const response = await crearPresupuestoService
+  
+        console.log(response);
+  
+        navigate("/");
+      } catch (error) {
+        console.log(error);
+        navigate("/error");
+      }
+  };
 
-  return
-  <div>
-  <label>Fecha:</label>
+
+
+  return (
+    <div>
+      <label>Fecha:</label>
       <input
         type="date"
         name="fecha"
@@ -40,35 +62,99 @@ function presupuestos() {
         type="text"
         name="nombre"
         value={form.nombre}
-        onChange={handleFormChange}
+        onChange={handlePreFormChange}
       />
 
-      <label>Descripción breve:</label>
+      <label>Pais:</label>
       <input
         type="text"
-        name="breveDesc"
-        value={form.breveDesc}
-        onChange={handleFormChange}
+        name="pais"
+        value={form.pais}
+        onChange={handlePreFormChange}
       />
 
-      <label>Descripción:</label>
+      <label>Provincia:</label>
       <input
         type="text"
-        name="descripcion"
-        value={form.descripcion}
-        onChange={handleFormChange}
+        name="provincia"
+        value={form.provincia}
+        onChange={handlePreFormChange}
       />
 
-      <label>Utilidades:</label>
+      <label>Población:</label>
       <input
         type="text"
-        name="utilidades"
-        value={form.utilidades}
-        onChange={handleFormChange}
+        name="poblacion"
+        value={form.poblacion}
+        onChange={handlePreFormChange}
       />
 
-      <button onClick={handleAddPresupuesto}>Añadir Presupuesto</button>
-  </div>;
+      <label>calle:</label>
+      <input
+        type="text"
+        name="calle"
+        value={form.calle}
+        onChange={handlePreFormChange}
+      />
+
+      <label>numero:</label>
+      <input
+        type="number"
+        name="numero"
+        value={form.numero}
+        onChange={handlePreFormChange}
+      />
+
+      <label>piso:</label>
+      <input
+        type="text"
+        name="piso"
+        value={form.piso}
+        onChange={handlePreFormChange}
+      />
+
+      <label>Observaciones:</label>
+      <input
+        type="text"
+        name="observaciones"
+        value={form.observaciones}
+        onChange={handlePreFormChange}
+      />
+
+      <label>Numero de Empleados:</label>
+      <input
+        type="text"
+        name="numEmpleados"
+        value={form.numEmpleados}
+        onChange={handlePreFormChange}
+      />
+
+      <label>Metros cuadrados:</label>
+      <input
+        type="text"
+        name="metro2"
+        value={form.metro2}
+        onChange={handlePreFormChange}
+      />
+
+      <label>Precio:</label>
+      <input
+        type="text"
+        name="precio"
+        value={form.precio}
+        onChange={handlePreFormChange}
+      />
+
+      <label>servicioId:</label>
+      <input
+        type="text"
+        name="servicioId"
+        value={form.servicioId}
+        onChange={handlePreFormChange}
+      />
+      <button onClick={handleAddPresupuesto}>Solicitar Presupuesto</button>
+    </div>
+  );
 }
 
-export default presupuestos;
+export default Presupuestos;
