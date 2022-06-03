@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { signupService } from "../../services/auth.services.js";
 import { useNavigate } from "react-router-dom";
 
@@ -32,8 +32,7 @@ function Signup() {
   const handleUsernameChange = (e) => setUsername(e.target.value);
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
-  const handleUserTypeChange = (e) =>
-    setUserType(e.target.value, console.log(userType));
+  // const handleUserTypeChange = (e) => setUserType(e.target.value);
   const handleTelfChange = (e) => setTelf(e.target.value);
   const handleCpChange = (e) => setCp(e.target.value);
   const handlePaisChange = (e) => setPais(e.target.value);
@@ -44,12 +43,12 @@ function Signup() {
   const handlePisoChange = (e) => setPiso(e.target.value);
   const handleCifChange = (e) => setCif(e.target.value);
   const handleRSocialChange = (e) => setRSocial(e.target.value);
-  const handleUserTypeClienteChange = (e) => {
+  const handleUserTypeChange = (e) => {
+    console.log(userType);
     setUserType(e.target.value);
-  };
 
-  const handleUserTypeProChange = (e) => {
-    setUserType(e.target.value);
+    console.log(e.target.value);
+    console.log(e.target.checked);
   };
 
   //______________________________________________________________________
@@ -98,19 +97,21 @@ function Signup() {
 
       <label>Cliente</label>
       <input
-        type="checkbox"
-        name="Cliente"
-        value={"cliente"}
-        onChange={handleUserTypeClienteChange}
-      ></input>
+        id="checkC"
+        type="radio"
+        name="userType"
+        value="cliente"
+        onChange={handleUserTypeChange}
+      />
 
       <label>Profesional</label>
       <input
-        type="checkbox"
-        name="Profesional"
-        value={"profesional"}
-        onChange={handleUserTypeProChange}
-      ></input>
+        id="checkP"
+        type="radio"
+        name="userType"
+        value="profesional"
+        onChange={handleUserTypeChange}
+      />
 
       {userType === "cliente" || userType === "profesional" ? (
         <div>
@@ -141,7 +142,7 @@ function Signup() {
           <br />
           <label>Teléfono:</label>
           <input
-            type="Number"
+            type="tel"
             name="telf"
             value={telf}
             onChange={handleTelfChange}
