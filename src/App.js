@@ -7,6 +7,7 @@ import Error from "./pages/Error";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import CrearS from "./pages/servicios/CrearS";
+import Presupuestos from "./pages/presupuesto/Presupuestos";
 import EditarS from "./pages/servicios/EditarS";
 
 function App() {
@@ -14,13 +15,20 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
+
+        {/* RUTAS GENERALES */}
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+
+        {/* RUTAS DE SERVICIOS */}
         <Route path="/servicios/crear" element={<CrearS />} />
         <Route path="/servicios/:id" element={<EditarS />} />
 
-        {/* rutas error FE */}
+        {/* RUTAS DE PRESUPUESTOS */}
+        <Route path="/presupuestos/crear" element={<Presupuestos />} />
+
+        {/* RUTAS DE ERRORES */}
         <Route path="/error" element={<Error />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

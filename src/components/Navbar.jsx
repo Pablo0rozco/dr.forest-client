@@ -41,7 +41,7 @@ function Navbar() {
           <NavLink to="/signup" style={toggleStyles}> Registro </NavLink>
         <NavLink to="/login" style={toggleStyles}> Acceso </NavLink>
         <NavLink to="/servicios/crear" style={toggleStyles}> Crear servicio </NavLink>
-       
+        <NavLink to="/presupuestos/crear" style={toggleStyles}> Solicitar Presupuesto </NavLink>
         
         </nav>
       )}

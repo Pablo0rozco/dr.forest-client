@@ -31,7 +31,7 @@ function Login() {
       // guardamos el token en localStorage
       localStorage.setItem("authToken", response.data.authToken)
       authenticateUser()
-      navigate("/todos")
+      navigate("/")
 
       // asignar los valores a los estados globales para manejo en el FE
 
