@@ -7,15 +7,15 @@ import Error from "./pages/Error";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import CrearS from "./pages/servicios/CrearS";
-import Presupuestos from "./pages/presupuesto/Presupuestos";
+import Presupuestos from "./pages/presupuesto/presupuestos.jsx";
 import EditarS from "./pages/servicios/EditarS";
+import DetallesS from "./pages/servicios/DetallesS";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <Routes>
-
         {/* RUTAS GENERALES */}
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
@@ -23,7 +23,8 @@ function App() {
 
         {/* RUTAS DE SERVICIOS */}
         <Route path="/servicios/crear" element={<CrearS />} />
-        <Route path="/servicios/:id" element={<EditarS />} />
+        <Route path="/servicios/:id/editar" element={<EditarS />} />
+        <Route path="/servicios/:id/detalles" element={<DetallesS/>}/>
 
         {/* RUTAS DE PRESUPUESTOS */}
         <Route path="/presupuestos/crear" element={<Presupuestos />} />
