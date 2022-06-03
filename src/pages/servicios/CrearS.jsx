@@ -4,12 +4,13 @@ import { crearServicioService } from "../../services/servicios.sevices";
 
 function CrearS() {
   const [form, setForm] = useState({
-    img: " ",
-    nombre: " ",
-    breveDesc: " ",
-    descripcion: " ",
-    utilidades: " ",
+    img: "",
+    nombre: "",
+    breveDesc: "",
+    descripcion: "",
+    utilidades: "",
   });
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const navigate = useNavigate();
 
@@ -34,7 +35,13 @@ function CrearS() {
       navigate("/");
     } catch (error) {
       console.log(error);
-      navigate("/error");
+      if (error.response.status === 400) {
+        setErrorMessage(error.response.data);
+        console.log();
+        console.log(error.response.data);
+      } else {
+        navigate("/error");
+      }
     }
   };
 
@@ -81,7 +88,10 @@ function CrearS() {
         onChange={handleFormChange}
       />
       <br />
+
       <button onClick={handleAñadirServicio}>Añadir Servicio</button>
+
+      {errorMessage !== null && <p>{errorMessage}</p>}
     </div>
   );
 }

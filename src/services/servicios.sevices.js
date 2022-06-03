@@ -5,25 +5,25 @@ const crearServicioService = (servicio) => {
 };
 
 const listarServiciosService = () => {
-  return service.get("/api/servicios");
+  return service.get("/servicios");
 };
 
-const detallesServicioservice = (id) => {
-  return service.get(`/api/servicios/${id}`);
+const detallesServicioService = (id) => {
+  return service.get(`/servicios/${id}`);
 };
 
 const borrarServicioService = (id) => {
-  return service.delete(`/api/servicios/${id}`);
+  return service.delete(`/servicios/${id}`);
 };
 
-const EditarServicioService = (id, servicio) => {
-  return service.delete(`/api/servicios/${id}`, servicio);
+const editarServicioService = (id, servicio) => {
+  return service.patch(`/servicios/${id}`, servicio);
 };
 
 export {
   crearServicioService,
   listarServiciosService,
-  detallesServicioservice,
+  detallesServicioService,
   borrarServicioService,
-  EditarServicioService,
+  editarServicioService,
 };
