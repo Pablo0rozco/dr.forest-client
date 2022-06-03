@@ -1,13 +1,17 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { crearServicioService } from "../../services/servicios.sevices";
 
 function CrearS() {
   const [form, setForm] = useState({
-    img: null,
-    nombre: null,
-    breveDesc: null,
-    descripcion: null,
-    utilidades: null,
+    img: " ",
+    nombre: " ",
+    breveDesc: " ",
+    descripcion: " ",
+    utilidades: " ",
   });
+
+  const navigate = useNavigate();
 
   const handleFormChange = (e) => {
     const formCopy = { ...form };
@@ -17,7 +21,22 @@ function CrearS() {
     setForm(formCopy);
   };
 
-  const handleAñadirServicio = () => {};
+  const handleAñadirServicio = async () => {
+    try {
+      const servicio = {
+        form,
+      };
+      console.log(servicio);
+      const response = await crearServicioService(servicio);
+
+      console.log(response);
+
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+      navigate("/error");
+    }
+  };
 
   return (
     <div>
@@ -28,6 +47,7 @@ function CrearS() {
         value={form.img}
         onChange={handleFormChange}
       />
+      <br />
 
       <label>Nombre:</label>
       <input
@@ -36,7 +56,7 @@ function CrearS() {
         value={form.nombre}
         onChange={handleFormChange}
       />
-
+      <br />
       <label>Descripción breve:</label>
       <input
         type="text"
@@ -44,7 +64,7 @@ function CrearS() {
         value={form.breveDesc}
         onChange={handleFormChange}
       />
-
+      <br />
       <label>Descripción:</label>
       <input
         type="text"
@@ -52,7 +72,7 @@ function CrearS() {
         value={form.descripcion}
         onChange={handleFormChange}
       />
-
+      <br />
       <label>Utilidades:</label>
       <input
         type="text"
@@ -60,7 +80,7 @@ function CrearS() {
         value={form.utilidades}
         onChange={handleFormChange}
       />
-
+      <br />
       <button onClick={handleAñadirServicio}>Añadir Servicio</button>
     </div>
   );
