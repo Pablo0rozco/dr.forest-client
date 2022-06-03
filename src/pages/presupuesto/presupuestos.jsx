@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
-import { crearPresupuestoService } from "../../services/Presupuestos.services.js";
+import { crearPresupuestoService } from "../../services/presupuestos.services.js";
 
 function Presupuestos() {
   const navigate = useNavigate();
