@@ -45,7 +45,7 @@ function DetallesPresupuesto() {
 
       <h4>Servicio: {presupuestoDetalles.direccion}</h4>      
       <button onClick={handleDelete}>Borrar</button>
-      <Link to={`/presupuesto/editar/${id}`}><button>Editar</button></Link>
+      <Link to={`/presupuestos/editar/${id}`}><button>Editar</button></Link>
       
     </div>
   )

@@ -17,7 +17,7 @@ const borrarPresupuestoService = (id) => {
 };
 
 const EditarPresupuestoService = (id, presupuesto) => {
-  return service.delete(`/presupuestos/${id}`, presupuesto);
+  return service.patch(`/presupuestos/${id}`, presupuesto);
 };
 
 export {

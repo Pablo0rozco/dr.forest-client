@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import {
-  detallesPresupuestoService,
-  EditarPresupuestoService,
-} from "../../services/presupuestos.sevices";
+import { detallesPresupuestoService, EditarPresupuestoService, borrarPresupuestoService} from "../../services/presupuestos.services.js";
 
 function EditarPresupuesto() {
   const [fecha, setFecha] = useState("");
@@ -13,7 +10,6 @@ function EditarPresupuesto() {
   const [poblacion, setPoblacion] = useState("");
   const [calle, setCalle] = useState(null);
 
-
   const [numero, setNumero] = useState("");
   const [piso, setPiso] = useState("");
   const [observaciones, setObservaciones] = useState("");
@@ -21,29 +17,43 @@ function EditarPresupuesto() {
   const [metro2, setMetro2] = useState("");
   const [precio, setPrecio] = useState("");
 
-
-
   const { id } = useParams();
 
   const navigate = useNavigate();
 
-  const handleImgChange = (e) => setImg(e.target.value);
-  const handleNombreChange = (e) => setNombre(e.target.value);
-  const handleBreveDescChange = (e) => setBreveDesc(e.target.value);
-  const handleDescripcionChange = (e) => setDescripcion(e.target.value);
-  const handleUtilidadesChange = (e) => setUtilidades(e.target.value);
+  const [errorMessage, setErrorMessage] = useState(null);
 
-  const handleEditarServicio = async () => {
+  const handleFechaChange = (e) => setFecha(e.target.value);
+  const handleDirectionChange = (e) => setDirection(e.target.value);
+  const handlePaisChange = (e) => setPais(e.target.value);
+  const handleProvinciaChange = (e) => setProvincia(e.target.value);
+  const handlePoblacionChange = (e) => setPoblacion(e.target.value);
+  const handleCalleChange = (e) => setCalle(e.target.value);
+  const handleNumeroChange = (e) => setNumero(e.target.value);
+  const handlePisoChange = (e) => setPiso(e.target.value);
+  const handleObservacionesChange = (e) => setObservaciones(e.target.value);
+  const handleNumEmpleadosChange = (e) => setNumEmpleados(e.target.value);
+  const handleMetro2Change = (e) => setMetro2(e.target.value);
+  const handlePrecioChange = (e) => setPrecio(e.target.value);
+
+  const handleEditarPresupuesto = async () => {
     try {
-      const servicios = {
-        img,
-        nombre,
-        breveDesc,
-        descripcion,
-        utilidades,
+      const presupuestos = {
+        fecha,
+        direction,
+        pais,
+        provincia,
+        poblacion,
+        calle,
+        numero,
+        piso,
+        observaciones,
+        numEmpleados,
+        metro2,
+        precio,
       };
-      await editarServicioService(id, servicios);
-      navigate(`/servicios/${id}`);
+      await EditarPresupuestoService(id, presupuestos);
+      navigate(`presupuestos/editar/${id}`);
     } catch (error) {
       if (error.response.status === 400) {
         setErrorMessage(error.response.data);
@@ -54,19 +64,41 @@ function EditarPresupuesto() {
   };
 
   useEffect(() => {
-    getDetailsServicios();
+    getDetailsPresupuestos();
   }, []);
 
-  const getDetailsServicios = async () => {
+  const getDetailsPresupuestos = async () => {
     try {
-      const response = await detallesServicioService(id);
-      const { img, nombre, breveDesc, descripcion, utilidades } = response.data;
+      const response = await detallesPresupuestoService(id);
+      const {
+        fecha,
+        direction,
+        pais,
+        provincia,
+        poblacion,
+        calle,
+        numero,
+        piso,
+        observaciones,
+        numEmpleados,
+        metro2,
+        precio,
+      } = response.data;
 
-      setImg(img);
-      setNombre(nombre);
-      setBreveDesc(breveDesc);
-      setDescripcion(descripcion);
-      setUtilidades(utilidades);
+      setFecha(fecha);
+      setDirection(direction);
+      setPais(pais);
+      setProvincia(provincia);
+      setPoblacion(poblacion);
+      setCalle(calle);
+      setPrecio(precio);
+      setNumEmpleados(numEmpleados);
+      setNumero(numero);
+      setPiso(piso);
+      setObservaciones(observaciones);
+      setMetro2(metro2);
+      setPrecio(precio);
+
     } catch (error) {
       navigate("/error");
     }
@@ -74,47 +106,119 @@ function EditarPresupuesto() {
 
   return (
     <div>
-      <label>Imagen:</label>
-      <input type="img" name="img" value={img} onChange={handleImgChange} />
+      <label>Fecha:</label>
+      <input type="date" name="fecha" value={fecha} onChange={handleFechaChange} />
       <br />
 
-      <label>Nombre:</label>
+      <label>Dirección:</label>
       <input
         type="text"
-        name="nombre"
-        value={nombre}
-        onChange={handleNombreChange}
+        name="direction"
+        value={direction}
+        onChange={handleDirectionChange}
       />
       <br />
-      <label>Descripción breve:</label>
+      <label>Pais:</label>
       <input
         type="text"
-        name="breveDesc"
-        value={breveDesc}
-        onChange={handleBreveDescChange}
+        name="pais"
+        value={pais}
+        onChange={handlePaisChange}
       />
       <br />
-      <label>Descripción:</label>
+      <label>Provincia:</label>
       <input
         type="text"
-        name="descripcion"
-        value={descripcion}
-        onChange={handleDescripcionChange}
+        name="provincia"
+        value={provincia}
+        onChange={handleProvinciaChange}
       />
       <br />
-      <label>Utilidades:</label>
+      <label>Población:</label>
       <input
         type="text"
-        name="utilidades"
-        value={utilidades}
-        onChange={handleUtilidadesChange}
+        name="poblacion"
+        value={provincia}
+        onChange={handlePoblacionChange}
       />
       <br />
-      <button onClick={handleEditarServicio}>Añadir Servicio</button>
+
+      <label>Calle:</label>
+      <input
+        type="text"
+        name="calle"
+        value={calle}
+        onChange={handleCalleChange}
+      />
+      <br />
+
+      <label>Número:</label>
+      <input
+        type="text"
+        name="numero"
+        value={numero}
+        onChange={handleNumeroChange}
+      />
+      <br />
+
+      <label>Piso:</label>
+      <input
+        type="text"
+        name="piso"
+        value={piso}
+        onChange={handlePisoChange}
+      />
+      <br />
+
+      <label>Observaciones:</label>
+      <input
+        type="text"
+        name="observaciones"
+        value={observaciones}
+        onChange={handleObservacionesChange}
+      />
+      <br />
+
+      <label>Numero de empleados:</label>
+      <input
+        type="text"
+        name="numEmpleados"
+        value={numEmpleados}
+        onChange={handleNumEmpleadosChange}
+      />
+      <br />
+
+      <label>Metros cuadrados:</label>
+      <input
+        type="text"
+        name="metro2"
+        value={metro2}
+        onChange={handleMetro2Change}
+      />
+      <br />
+
+      <label>Precio:</label>
+      <input
+        type="text"
+        name="precio"
+        value={precio}
+        onChange={handlePrecioChange}
+      />
+      <br />
+
+
+
+
+
+
+
+
+
+      <button onClick={handleEditarPresupuesto}>Editar Presupuesto</button>
 
       {errorMessage !== null && <p>{errorMessage}</p>}
     </div>
   );
 }
 
-export default EditarS;
+export default EditarPresupuesto;
