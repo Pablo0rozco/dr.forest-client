@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { crearPresupuestoService } from "../../services/presupuestos.services.js";
 
 function Presupuestos(props) {
-  const search = useLocation().search;
-  const idS = new URLSearchParams(search).get("id");
   const { id } = useParams();
 
   const navigate = useNavigate();
@@ -20,7 +18,7 @@ function Presupuestos(props) {
     observaciones: "",
     numEmpleados: "",
     metro2: "",
-    servicioId: idS,
+    servicioId: id,
   });
 
   const handlePreFormChange = (e) => {
@@ -32,7 +30,7 @@ function Presupuestos(props) {
   };
   const handleAddPresupuesto = async () => {
     try {
-      const response = await crearPresupuestoService(form);
+      const response = await crearPresupuestoService(id, form);
 
       console.log(response);
 

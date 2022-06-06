@@ -158,6 +158,8 @@ function Signup() {
 
       {userType === "profesional" ? (
         <div>
+          <hr />
+          <h2>Datos de la empresa:</h2>
           <label>País:</label>
           <input
             type="text"
