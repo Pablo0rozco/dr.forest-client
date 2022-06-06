@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { crearPresupuestoService } from "../../services/presupuestos.services.js";
 
 function Presupuestos(props) {
   const search = useLocation().search;
   const idS = new URLSearchParams(search).get("id");
+  const { id } = useParams();
 
   const navigate = useNavigate();
   const [form, setForm] = useState({
@@ -35,7 +36,7 @@ function Presupuestos(props) {
 
       console.log(response);
 
-      navigate("/");
+      navigate("/crear/:id");
     } catch (error) {
       console.log(error);
       navigate("/error");

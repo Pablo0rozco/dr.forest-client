@@ -31,7 +31,7 @@ function App() {
 
         {/* RUTAS DE PRESUPUESTOS */}
         <Route path="/presupuestos" element={<ListarPresupuesto />} />
-        <Route path="/presupuestos/crear" element={<Presupuestos />} />
+        <Route path="/presupuestos/crear/:id" element={<Presupuestos />} />
         <Route path="/presupuestos/:id/detalles" element={<DetallesPresupuesto />} />
         <Route path="/presupuestos/editar/:id" element={<EditarPresupuesto />} />
 

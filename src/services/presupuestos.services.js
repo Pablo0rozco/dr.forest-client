@@ -1,7 +1,7 @@
 import service from "./config.services";
 
 const crearPresupuestoService = (presupuesto) => {
-  return service.post("/presupuestos", presupuesto);
+  return service.post("/presupuestos/:id", presupuesto);
 };
 
 const listarPresupuestosService = () => {
