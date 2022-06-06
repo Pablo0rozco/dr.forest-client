@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { listarPresupuestosService } from "../../services/presupuestos.services";
 import { AuthContext } from "../../context/auth.context";
 function ListarPresupuesto() {
-  const [presupuestoList, setPresupuestoList] = useState(null);
+  const [presupuestoList, setPresupuestoList] = useState([]);
   const { user } = useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -13,16 +13,25 @@ function ListarPresupuesto() {
   }, []);
 
   const getAllPresupuestos = async () => {
-    const id = user._id;
-    const response = await listarPresupuestosService(id);
-
-    setPresupuestoList(response);
-    console.log(response);
+    try {
+      const response = await listarPresupuestosService();
+      setPresupuestoList(response.data);
+    } catch (error) {
+      navigate("/error");
+    }
   };
+  console.log(presupuestoList);
 
   return (
     <div>
-      <h1></h1>
+      {presupuestoList.map((eachP) => {
+        return (
+          <div>
+            <h2>{eachP.userId.username}</h2>
+            <h2>{eachP.estado}</h2>
+          </div>
+        );
+      })}
     </div>
   );
 }
