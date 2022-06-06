@@ -49,7 +49,6 @@ function DetallesS() {
       <small>{detalles.breveDesc}</small>
       <p>{detalles.descripcion}</p>
       <p>{detalles.utilidades}</p>
-
       {user.userType === "cliente" ? (
         <Link to={`/presupuestos/crear/${id}`}>
           <button>Pedir presupuesto</button>
@@ -60,14 +59,14 @@ function DetallesS() {
             <button>Editar Servicio</button>
           </Link>
 
-      <Link to={`/presupuestos/crear/${id}`}>
-        <button>Pedir presupuesto</button>
-      </Link>
-
+          <Link to={`/presupuestos/crear/${id}`}>
+            <button>Pedir presupuesto</button>
+          </Link>
+        </div>
+      )}
+      ;
     </div>
-  )};
-  </div>
+  );
 }
 
-
-export default DetallesS
+export default DetallesS;
