@@ -12,6 +12,7 @@ import EditarS from "./pages/servicios/EditarS";
 import DetallesS from "./pages/servicios/DetallesS";
 import DetallesPresupuesto from "./pages/presupuesto/DetallesPresupuesto";
 import EditarPresupuesto from "./pages/presupuesto/EditarPresupuesto";
+import ListarPresupuesto from "./pages/presupuesto/ListarPresupuesto";
 
 function App() {
   return (
@@ -29,9 +30,11 @@ function App() {
         <Route path="/servicios/:id/detalles" element={<DetallesS />} />
 
         {/* RUTAS DE PRESUPUESTOS */}
+        <Route path="/presupuestos" element={<ListarPresupuesto />} />
         <Route path="/presupuestos/crear" element={<Presupuestos />} />
         <Route path="/presupuestos/:id/detalles" element={<DetallesPresupuesto />} />
         <Route path="/presupuestos/editar/:id" element={<EditarPresupuesto />} />
+
 
 
         {/* RUTAS DE ERRORES */}

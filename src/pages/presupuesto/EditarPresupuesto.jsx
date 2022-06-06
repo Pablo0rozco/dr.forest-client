@@ -4,8 +4,8 @@ import { detallesPresupuestoService, EditarPresupuestoService, borrarPresupuesto
 
 function EditarPresupuesto() {
   const [fecha, setFecha] = useState("");
-  const [direction, setDirection] = useState("");
-  const [pais, setPais] = useState("");
+  
+  
   const [provincia, setProvincia] = useState("");
   const [poblacion, setPoblacion] = useState("");
   const [calle, setCalle] = useState(null);
@@ -24,8 +24,8 @@ function EditarPresupuesto() {
   const [errorMessage, setErrorMessage] = useState(null);
 
   const handleFechaChange = (e) => setFecha(e.target.value);
-  const handleDirectionChange = (e) => setDirection(e.target.value);
-  const handlePaisChange = (e) => setPais(e.target.value);
+  
+  
   const handleProvinciaChange = (e) => setProvincia(e.target.value);
   const handlePoblacionChange = (e) => setPoblacion(e.target.value);
   const handleCalleChange = (e) => setCalle(e.target.value);
@@ -40,8 +40,8 @@ function EditarPresupuesto() {
     try {
       const presupuestos = {
         fecha,
-        direction,
-        pais,
+        
+        
         provincia,
         poblacion,
         calle,
@@ -72,8 +72,8 @@ function EditarPresupuesto() {
       const response = await detallesPresupuestoService(id);
       const {
         fecha,
-        direction,
-        pais,
+        
+        
         provincia,
         poblacion,
         calle,
@@ -86,8 +86,8 @@ function EditarPresupuesto() {
       } = response.data;
 
       setFecha(fecha);
-      setDirection(direction);
-      setPais(pais);
+      
+      
       setProvincia(provincia);
       setPoblacion(poblacion);
       setCalle(calle);
@@ -110,22 +110,9 @@ function EditarPresupuesto() {
       <input type="date" name="fecha" value={fecha} onChange={handleFechaChange} />
       <br />
 
-      <label>Dirección:</label>
-      <input
-        type="text"
-        name="direction"
-        value={direction}
-        onChange={handleDirectionChange}
-      />
+      
       <br />
-      <label>Pais:</label>
-      <input
-        type="text"
-        name="pais"
-        value={pais}
-        onChange={handlePaisChange}
-      />
-      <br />
+      
       <label>Provincia:</label>
       <input
         type="text"
