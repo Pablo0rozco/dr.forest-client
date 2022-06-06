@@ -7,7 +7,7 @@ function Presupuestos() {
   const navigate = useNavigate();
   const [form, setForm] = useState({
     fecha: "",
-    direccion: "",
+    direction: "",
     pais: "",
     provincia: "",
     poblacion: "",
@@ -30,11 +30,7 @@ function Presupuestos() {
   };
   const handleAddPresupuesto = async () => {
     try {
-      const presupuesto = {
-        form,
-      };
-      console.log(presupuesto);
-      const response = await crearPresupuestoService(presupuesto);
+      const response = await crearPresupuestoService(form);
 
       console.log(response);
 
@@ -59,7 +55,7 @@ function Presupuestos() {
       <label>Dirección:</label>
       <input
         type="text"
-        name="direccion"
+        name="direction"
         value={form.nombre}
         onChange={handlePreFormChange}
       />
@@ -122,7 +118,7 @@ function Presupuestos() {
       <br />
       <label>Numero de Empleados:</label>
       <input
-        type="text"
+        type="number"
         name="numEmpleados"
         value={form.numEmpleados}
         onChange={handlePreFormChange}
@@ -130,7 +126,7 @@ function Presupuestos() {
       <br />
       <label>Metros cuadrados:</label>
       <input
-        type="text"
+        type="number"
         name="metro2"
         value={form.metro2}
         onChange={handlePreFormChange}
@@ -138,7 +134,7 @@ function Presupuestos() {
       <br />
       <label>Precio:</label>
       <input
-        type="text"
+        type="number"
         name="precio"
         value={form.precio}
         onChange={handlePreFormChange}
