@@ -3,15 +3,13 @@ import { loginService } from "../../services/auth.services";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context.js";
 
-
 function Login() {
-
-  const {authenticateUser } = useContext(AuthContext)
-  const navigate = useNavigate()
+  const { authenticateUser } = useContext(AuthContext);
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [ errorMessage, setErrorMessage] = useState(null)
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
@@ -21,35 +19,31 @@ function Login() {
     // ... login logic here
     const user = {
       email,
-      password
-    }
+      password,
+    };
 
     try {
       // validaremos al usuario
-      const response = await loginService(user)
+      const response = await loginService(user);
       // console.log("usuario validado", response.data)
       // guardamos el token en localStorage
-      localStorage.setItem("authToken", response.data.authToken)
-      authenticateUser()
-      navigate("/")
+      localStorage.setItem("authToken", response.data.authToken);
+      authenticateUser();
+      navigate("/");
 
       // asignar los valores a los estados globales para manejo en el FE
-
-      
     } catch (error) {
-      if (error.response.status === 400 || error.response.status === 401){
-        setErrorMessage(error.response.data.errorMessage)
+      console.log(error.response.data);
+      if (error.response.status === 400 || error.response.status === 401) {
+        setErrorMessage(error.response.data.errorMessage);
       } else {
-        navigate("/error")
-
+        navigate("/error");
       }
-      
     }
   };
 
   return (
     <div>
-
       <h1>Log In</h1>
 
       <form onSubmit={handleLogin}>
@@ -72,11 +66,10 @@ function Login() {
 
         <br />
 
-          {errorMessage !== null && <p>{errorMessage}</p>}  
+        {errorMessage !== null && <p>{errorMessage}</p>}
 
         <button type="submit">Login</button>
       </form>
-      
     </div>
   );
 }

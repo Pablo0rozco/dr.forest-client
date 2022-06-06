@@ -7,7 +7,7 @@ function Presupuestos() {
   const navigate = useNavigate();
   const [form, setForm] = useState({
     fecha: "",
-    direction: "",
+    direccion: "",
     pais: "",
     provincia: "",
     poblacion: "",
@@ -24,7 +24,7 @@ function Presupuestos() {
   const handlePreFormChange = (e) => {
     const formCopy = { ...form };
 
-    formCopy[e.target.value] = e.target.value;
+    formCopy[e.target.name] = e.target.value;
 
     setForm(formCopy);
   };
@@ -34,7 +34,7 @@ function Presupuestos() {
         form,
       };
       console.log(presupuesto);
-      const response = await crearPresupuestoService();
+      const response = await crearPresupuestoService(presupuesto);
 
       console.log(response);
 
@@ -59,7 +59,7 @@ function Presupuestos() {
       <label>Dirección:</label>
       <input
         type="text"
-        name="nombre"
+        name="direccion"
         value={form.nombre}
         onChange={handlePreFormChange}
       />
