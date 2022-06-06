@@ -17,7 +17,7 @@ function Presupuestos() {
     observaciones: "",
     numEmpleados: "",
     metro2: "",
-    precio: "",
+
     servicioId: "",
   });
 
@@ -131,14 +131,7 @@ function Presupuestos() {
         value={form.metro2}
         onChange={handlePreFormChange}
       />
-      <br />
-      <label>Precio:</label>
-      <input
-        type="number"
-        name="precio"
-        value={form.precio}
-        onChange={handlePreFormChange}
-      />
+
       <br />
       <label>servicioId:</label>
       <input
