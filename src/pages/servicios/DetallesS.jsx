@@ -67,7 +67,7 @@ function DetallesS() {
     </div>
   )};
   </div>
-}
+)}
 
 
 export default DetallesS
