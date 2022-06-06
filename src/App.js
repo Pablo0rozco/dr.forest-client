@@ -10,6 +10,7 @@ import CrearS from "./pages/servicios/CrearS";
 import Presupuestos from "./pages/presupuesto/Presupuestos";
 import EditarS from "./pages/servicios/EditarS";
 import DetallesS from "./pages/servicios/DetallesS";
+import DetallesPresupuesto from "./pages/presupuesto/DetallesPresupuesto";
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
 
         {/* RUTAS DE PRESUPUESTOS */}
         <Route path="/presupuestos/crear" element={<Presupuestos />} />
+        <Route path="/presupuestos/:id/detalles" element={<DetallesPresupuesto />} />
+
 
         {/* RUTAS DE ERRORES */}
         <Route path="/error" element={<Error />} />
