@@ -33,7 +33,7 @@ function Home() {
           <Link to={`/servicios/${eachService._id}/detalles`}>
             <div>
               <h2>{eachService.nombre} </h2>
-              <img src={eachService.img} alt="" />
+              <img src={eachService.img} alt="" width={"150px"} />
               <p>{eachService.breveDesc} </p>
             </div>
           </Link>

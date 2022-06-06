@@ -6,13 +6,13 @@ import {
 } from "../../services/servicios.sevices";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
+import { listaProfesionalesService } from "../../services/auth.services";
 
 function DetallesS() {
   const [detalles, setDetalles] = useState(null);
   const navigate = useNavigate();
   const { id } = useParams();
   const { user } = useContext(AuthContext);
-  console.log(user);
 
   useEffect(() => {
     getDetails();
@@ -22,7 +22,6 @@ function DetallesS() {
     try {
       const response = await detallesServicioService(id);
       setDetalles(response.data);
-      console.log(response.data);
     } catch (error) {
       navigate("/error");
     }
@@ -34,7 +33,7 @@ function DetallesS() {
       navigate("/");
     } catch (error) {
       navigate("/error");
-      console.log(error.response.data);
+      console.log(error.response);
     }
   };
 
@@ -50,15 +49,20 @@ function DetallesS() {
       <small>{detalles.breveDesc}</small>
       <p>{detalles.descripcion}</p>
       <p>{detalles.utilidades}</p>
-      <Link to={`/servicios/${id}/editar`}>
-        <button>Editar Servicio</button>
-      </Link>
 
-      <button onClick={handleDelete}>Borrar servicio</button>
+      {user.userType === "cliente" ? (
+        <Link to={`/presupuestos/crear/${id}`}>
+          <button>Pedir presupuesto</button>
+        </Link>
+      ) : (
+        <div>
+          <Link to={`/servicios/${id}/editar`}>
+            <button>Editar Servicio</button>
+          </Link>
 
-      <Link to={`/presupuestos/crear?id=${id}`}>
-        <button>Pedir presupuesto</button>
-      </Link>
+          <button onClick={handleDelete}>Borrar servicio</button>
+        </div>
+      )}
     </div>
   );
 }
