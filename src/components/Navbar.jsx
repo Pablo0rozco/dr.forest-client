@@ -21,7 +21,7 @@ function Navbar() {
     localStorage.removeItem("authToken")
     authenticateUser()
   }
-
+  console.log(user);
   return (
     <div>
       {user !== null && <p>Bienvenido: {user.username}</p>}
@@ -29,7 +29,6 @@ function Navbar() {
       {isLoggedIn === true ? (
         <nav>
           <NavLink to="/" style={toggleStyles}> Home </NavLink>
-          <NavLink to="/todos" end={true} style={toggleStyles}> Ver Lista </NavLink>
 
 
           <button onClick={handleLogout}>Cerrar Sesion</button>

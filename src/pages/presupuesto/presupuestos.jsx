@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { crearPresupuestoService } from "../../services/presupuestos.services.js";
 
 function Presupuestos(props) {
@@ -10,8 +10,7 @@ function Presupuestos(props) {
   const navigate = useNavigate();
   const [form, setForm] = useState({
     fecha: "",
-    direction: "",
-    pais: "",
+
     provincia: "",
     poblacion: "",
     calle: "",
@@ -43,6 +42,59 @@ function Presupuestos(props) {
     }
   };
 
+  const provincias = [
+    "Alava",
+    "Albacete",
+    "Alicante",
+    "Almería",
+    "Asturias",
+    "Avila",
+    "Badajoz",
+    "Barcelona",
+    "Burgos",
+    "Cáceres",
+    "Cádiz",
+    "Cantabria",
+    "Castellón",
+    "Ciudad Real",
+    "Córdoba",
+    "La Coruña",
+    "Cuenca",
+    "Gerona",
+    "Granada",
+    "Guadalajara",
+    "Guipúzcoa",
+    "Huelva",
+    "Huesca",
+    "Islas Baleares",
+    "Jaén",
+    "León",
+    "Lérida",
+    "Lugo",
+    "Madrid",
+    "Málaga",
+    "Murcia",
+    "Navarra",
+    "Orense",
+    "Palencia",
+    "Las Palmas",
+    "Pontevedra",
+    "La Rioja",
+    "Salamanca",
+    "Segovia",
+    "Sevilla",
+    "Soria",
+    "Tarragona",
+    "Santa Cruz de Tenerife",
+    "Teruel",
+    "Toledo",
+    "Valencia",
+    "Valladolid",
+    "Vizcaya",
+    "Zamora",
+    "Zaragoza",
+  ];
+
   return (
     <div>
       <br />
@@ -54,29 +106,18 @@ function Presupuestos(props) {
         onChange={handlePreFormChange}
       />
       <br />
-      <label>Dirección:</label>
-      <input
-        type="text"
-        name="direction"
-        value={form.nombre}
-        onChange={handlePreFormChange}
-      />
-      <br />
-      <label>Pais:</label>
-      <input
-        type="text"
-        name="pais"
-        value={form.pais}
-        onChange={handlePreFormChange}
-      />
-      <br />
       <label>Provincia:</label>
-      <input
+      <select
         type="text"
         name="provincia"
         value={form.provincia}
         onChange={handlePreFormChange}
-      />
+      >
+        {provincias.map((eachP) => {
+          return <option>{eachP}</option>;
+        })}
+      </select>
+
       <br />
       <label>Población:</label>
       <input
@@ -86,7 +127,7 @@ function Presupuestos(props) {
         onChange={handlePreFormChange}
       />
       <br />
-      <label>calle:</label>
+      <label>Calle:</label>
       <input
         type="text"
         name="calle"
@@ -94,7 +135,7 @@ function Presupuestos(props) {
         onChange={handlePreFormChange}
       />
       <br />
-      <label>numero:</label>
+      <label>Numero:</label>
       <input
         type="number"
         name="numero"
@@ -102,7 +143,7 @@ function Presupuestos(props) {
         onChange={handlePreFormChange}
       />
       <br />
-      <label>piso:</label>
+      <label>Piso:</label>
       <input
         type="text"
         name="piso"
@@ -134,14 +175,6 @@ function Presupuestos(props) {
         onChange={handlePreFormChange}
       />
 
-      <br />
-      <label>servicioId:</label>
-      <input
-        type="text"
-        name="servicioId"
-        value={form.servicioId}
-        onChange={handlePreFormChange}
-      />
       <br />
       <button onClick={handleAddPresupuesto}>Solicitar Presupuesto</button>
     </div>

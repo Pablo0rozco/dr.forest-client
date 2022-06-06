@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import {
   detallesServicioService,
   borrarServicioService,
 } from "../../services/servicios.sevices";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/auth.context";
 
 function DetallesS() {
   const [detalles, setDetalles] = useState(null);
   const navigate = useNavigate();
   const { id } = useParams();
+  const { user } = useContext(AuthContext);
+  console.log(user);
 
   useEffect(() => {
     getDetails();
