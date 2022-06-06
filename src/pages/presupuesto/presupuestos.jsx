@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { crearPresupuestoService } from "../../services/presupuestos.services.js";
 
-function Presupuestos() {
+function Presupuestos(props) {
+  const search = useLocation().search;
+  const idS = new URLSearchParams(search).get("id");
+
   const navigate = useNavigate();
   const [form, setForm] = useState({
     fecha: "",
@@ -17,8 +20,7 @@ function Presupuestos() {
     observaciones: "",
     numEmpleados: "",
     metro2: "",
-    precio: "",
-    servicioId: "",
+    servicioId: idS,
   });
 
   const handlePreFormChange = (e) => {
@@ -124,15 +126,14 @@ function Presupuestos() {
         onChange={handlePreFormChange}
       />
       <br />
-
-      <br />
-      <label>Precio:</label>
+      <label>Metros cuadrados:</label>
       <input
         type="number"
-        name="precio"
-        value={form.precio}
+        name="metro2"
+        value={form.metro2}
         onChange={handlePreFormChange}
       />
+
       <br />
       <label>servicioId:</label>
       <input

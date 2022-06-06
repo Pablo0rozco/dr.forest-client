@@ -25,7 +25,7 @@ function App() {
         {/* RUTAS DE SERVICIOS */}
         <Route path="/servicios/crear" element={<CrearS />} />
         <Route path="/servicios/:id/editar" element={<EditarS />} />
-        <Route path="/servicios/:id/detalles" element={<DetallesS/>}/>
+        <Route path="/servicios/:id/detalles" element={<DetallesS />} />
 
         {/* RUTAS DE PRESUPUESTOS */}
         <Route path="/presupuestos/crear" element={<Presupuestos />} />

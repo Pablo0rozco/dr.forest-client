@@ -53,7 +53,7 @@ function DetallesS() {
 
       <button onClick={handleDelete}>Borrar servicio</button>
 
-      <Link to={"/presupuestos/crear"}>
+      <Link to={`/presupuestos/crear?id=${id}`}>
         <button>Pedir presupuesto</button>
       </Link>
     </div>

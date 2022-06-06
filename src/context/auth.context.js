@@ -7,10 +7,10 @@ function AuthWrapper(props) {
   //! Estados y funciones que modifican
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
-  const [isLoadingUser, setIsLoadingUser ] = useState(true)
-  console.log(isLoggedIn)
+  const [isLoadingUser, setIsLoadingUser] = useState(true);
+  console.log(isLoggedIn);
   const authenticateUser = async () => {
-    setIsLoadingUser(true)
+    setIsLoadingUser(true);
     try {
       // donde llamamos a la ruta verify
       const response = await verifyService();
@@ -18,12 +18,12 @@ function AuthWrapper(props) {
       console.log("el payload es:", response.data);
       setIsLoggedIn(true);
       setUser(response.data);
-      setIsLoadingUser(false)
+      setIsLoadingUser(false);
     } catch (error) {
       console.log("El usuario no tiene token o el token no es valido");
       setIsLoggedIn(false);
       setUser(null);
-      setIsLoadingUser(false)
+      setIsLoadingUser(false);
     }
   };
   const passedContext = {
@@ -32,15 +32,16 @@ function AuthWrapper(props) {
     authenticateUser,
   };
 
-  useEffect(()=> {
-    authenticateUser()
-  }, [])
+  useEffect(() => {
+    authenticateUser();
+  }, []);
 
   if (isLoadingUser === true) {
-    return <div className="App"> <h3>
-      Verificando al usuario
-    </h3>
-    </div>
+    return (
+      <div className="App">
+        <h3>Verificando al usuario</h3>
+      </div>
+    );
   }
 
   return (
