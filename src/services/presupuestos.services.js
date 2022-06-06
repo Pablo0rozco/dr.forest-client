@@ -4,8 +4,8 @@ const crearPresupuestoService = (presupuesto) => {
   return service.post("/presupuestos/:id", presupuesto);
 };
 
-const listarPresupuestosService = () => {
-  return service.get("/presupuestos");
+const listarPresupuestosService = (id) => {
+  return service.get("/presupuestos",id);
 };
 
 const detallesPresupuestoService = (id) => {

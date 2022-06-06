@@ -8,7 +8,7 @@ import {Navigate} from "react-router-dom"
 function IsPrivate(props) {
   const {isLoggedIn} = useContext(AuthContext)
 
-  if (isLoggedIn === true) {
+  if (isLoggedIn === true ) {
       return props.children
   } else {
     return <Navigate to="/login" />

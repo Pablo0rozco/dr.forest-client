@@ -1,19 +1,15 @@
 import service from "./config.services";
 
 const signupService = (user) => {
-    return service.post("/auth/signup", user)
-}
+  return service.post("/auth/signup", user);
+};
 
 const loginService = (user) => {
-    return service.post("/auth/login", user)
-}
+  return service.post("/auth/login", user);
+};
 
 const verifyService = () => {
-    return service.get("/auth/verify")
-} //! Necesitaremos configurar el envio del token
+  return service.get("/auth/verify");
+}; //! Necesitaremos configurar el envio del token
 
-export {
-    signupService,
-    loginService,
-    verifyService
-}
+export { signupService, loginService, verifyService };
