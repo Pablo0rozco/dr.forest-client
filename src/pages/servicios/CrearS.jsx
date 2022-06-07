@@ -9,6 +9,8 @@ function CrearS() {
     breveDesc: "",
     descripcion: "",
     utilidades: "",
+
+    
   });
   const [errorMessage, setErrorMessage] = useState(null);
 
