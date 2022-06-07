@@ -8,6 +8,10 @@ const listarPresupuestosService = (id) => {
   return service.get("/presupuestos", id);
 };
 
+const listarPresupuestosEmpresaService = (id) => {
+  return service.get("/presupuestos/empresa", id);
+};
+
 const detallesPresupuestoService = (id) => {
   return service.get(`/presupuestos/${id}`);
 };
@@ -26,4 +30,5 @@ export {
   detallesPresupuestoService,
   borrarPresupuestoService,
   EditarPresupuestoService,
+  listarPresupuestosEmpresaService
 };

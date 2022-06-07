@@ -13,6 +13,7 @@ import DetallesS from "./pages/servicios/DetallesS";
 import DetallesPresupuesto from "./pages/presupuesto/DetallesPresupuesto";
 import EditarPresupuesto from "./pages/presupuesto/EditarPresupuesto";
 import ListarPresupuesto from "./pages/presupuesto/ListarPresupuesto";
+import ListarPresupuestosProfesional from "./pages/presupuesto/ListarPresupuestosProfesional";
 
 function App() {
   return (
@@ -32,10 +33,18 @@ function App() {
         {/* RUTAS DE PRESUPUESTOS */}
         <Route path="/presupuestos" element={<ListarPresupuesto />} />
         <Route path="/presupuestos/crear/:id" element={<Presupuestos />} />
-        <Route path="/presupuestos/:id/detalles" element={<DetallesPresupuesto />} />
-        <Route path="/presupuestos/editar/:id" element={<EditarPresupuesto />} />
-
-
+        <Route
+          path="/presupuestos/:id/detalles"
+          element={<DetallesPresupuesto />}
+        />
+        <Route
+          path="/presupuestos/editar/:id"
+          element={<EditarPresupuesto />}
+        />
+        <Route
+          path="/presupuestos/empresa"
+          element={<ListarPresupuestosProfesional />}
+        />
 
         {/* RUTAS DE ERRORES */}
         <Route path="/error" element={<Error />} />

@@ -17,8 +17,8 @@ function Presupuestos() {
     numero: "",
     piso: "",
     observaciones: "",
-    numEmpleados: "",
-    metro2: "",
+    numEmpleados: 0,
+    metro2: 0,
     servicioId: id,
     profesionalId: idPro,
   });
