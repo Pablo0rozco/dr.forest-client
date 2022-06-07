@@ -51,7 +51,7 @@ function CrearS() {
     <div>
       <label>Imagen:</label>
       <input
-        type="img"
+        type="text"
         name="img"
         value={form.img}
         onChange={handleFormChange}
