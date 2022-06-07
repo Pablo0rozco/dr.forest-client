@@ -47,7 +47,20 @@ function Navbar() {
         )}
       </div>
 
-      <div>      
+      <div>   
+      {isLoggedIn === true && (
+        <nav className="">
+          <NavLink to="/" style={toggleStyles}> Home </NavLink>
+          <NavLink to="/servicios/crear" style={toggleStyles}> Crear servicio </NavLink>
+        {user.userType === "cliente"&& <NavLink to="/presupuestos" style={toggleStyles}> Ver tus presupuestos </NavLink>
+        }
+         {user.userType === "profesional"&& <NavLink to="/presupuestos/empresa" style={toggleStyles}> Ver tus presupuestos </NavLink>
+        }
+
+          <button onClick={handleLogout}>Cerrar Sesion</button>
+
+        </nav>
+      ) }
       {(isLoggedIn === true && isCliente === true) && (
         <nav>
           <NavLink to="/" style={toggleStyles}> Home </NavLink>          
