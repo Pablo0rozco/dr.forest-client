@@ -40,7 +40,8 @@ function Navbar() {
           <nav>
             <NavLink to="/" style={toggleStyles}> Home </NavLink>
             <NavLink to="/servicios/crear" style={toggleStyles}> Crear servicio </NavLink>
-            <NavLink to="/presupuestos" style={toggleStyles}> Ver Solicitudes </NavLink>            
+            <NavLink to="/presupuestos" style={toggleStyles}> Ver Solicitudes </NavLink>  
+            <NavLink to="/perfil" style={toggleStyles}>Ver Perfil</NavLink>          
             <button onClick={handleLogout}>Cerrar Sesion</button>
           </nav>
         )}
@@ -51,6 +52,7 @@ function Navbar() {
         <nav>
           <NavLink to="/" style={toggleStyles}> Home </NavLink>          
           <NavLink to="/presupuestos" style={toggleStyles}> Ver tus presupuestos </NavLink>
+          <NavLink to="/perfil" style={toggleStyles}>Ver Perfil</NavLink>
             <button onClick={handleLogout}>Cerrar Sesion</button>
         </nav>
       )}      
@@ -61,7 +63,7 @@ function Navbar() {
         <nav>
           <NavLink to="/" style={toggleStyles}> Home </NavLink>  
           <NavLink to="/signup" style={toggleStyles}> Registrase </NavLink>        
-          <NavLink to="/login" style={toggleStyles}> Acceder </NavLink>            
+          <NavLink to="/login" style={toggleStyles}> Acceder </NavLink>                 
         </nav>
       )}  
 

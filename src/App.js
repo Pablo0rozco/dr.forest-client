@@ -14,6 +14,9 @@ import DetallesPresupuesto from "./pages/presupuesto/DetallesPresupuesto";
 import EditarPresupuesto from "./pages/presupuesto/EditarPresupuesto";
 import ListarPresupuesto from "./pages/presupuesto/ListarPresupuesto";
 import IsPrivate from "./components/isPrivate";
+import Profile from "./pages/profile/Profile";
+import ProfileEdit from "./pages/profile/ProfileEdit";
+
 
 
 
@@ -37,6 +40,10 @@ function App() {
         <Route path="/presupuestos/crear/:id" element={<IsPrivate><Presupuestos /></IsPrivate>} />
         <Route path="/presupuestos/:id/detalles" element={<IsPrivate><DetallesPresupuesto /></IsPrivate>} />
         <Route path="/presupuestos/editar/:id" element={<IsPrivate><EditarPresupuesto /></IsPrivate>} />
+
+        {/* RUTAS DE PERFIL */}
+        <Route path="/perfil" element={<IsPrivate><Profile /></IsPrivate>  } />
+        <Route path="/perfil/editar" element={<IsPrivate><ProfileEdit /></IsPrivate>  } />
 
 
 

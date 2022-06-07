@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { useNavigate, useParams } from "react-router-dom";
 import { crearPresupuestoService } from "../../services/presupuestos.services.js";
+import { detallesServicioService } from "../../services/servicios.sevices.js";
 
-function Presupuestos(props) {
+function Presupuestos() {
   const { id } = useParams();
+  const [idPro, setIdPro] = useState("");
 
   const navigate = useNavigate();
   const [form, setForm] = useState({
     fecha: "",
-
     provincia: "",
     poblacion: "",
     calle: "",
@@ -19,8 +20,23 @@ function Presupuestos(props) {
     numEmpleados: "",
     metro2: "",
     servicioId: id,
+    profesionalId: idPro,
   });
 
+  useEffect(() => {
+    getDetalles();
+  }, []);
+  console.log(idPro);
+  const getDetalles = async () => {
+    try {
+      const response = await detallesServicioService(id);
+
+      setIdPro(response.data.idCreador);
+    } catch (error) {
+      navigate("/error");
+      console.log(error);
+    }
+  };
   const handlePreFormChange = (e) => {
     const formCopy = { ...form };
 

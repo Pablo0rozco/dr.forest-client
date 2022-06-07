@@ -101,7 +101,8 @@ function Signup() {
         type="radio"
         name="userType"
         value="cliente"
-        onChange={handleUserTypeChange}
+        onChange={handleUserTypeChange} class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+
       />
 
       <label>Profesional</label>
@@ -110,47 +111,55 @@ function Signup() {
         type="radio"
         name="userType"
         value="profesional"
-        onChange={handleUserTypeChange}
+        onChange={handleUserTypeChange} class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
       />
 
       {userType === "cliente" || userType === "profesional" ? (
         <div>
-          <label>Nombre de usuario:</label>
-          <input
-            type="text"
-            name="username"
-            value={username}
-            onChange={handleUsernameChange}
-          />
-
+          <div class="relative z-0 w-full mb-6 group">
+            <label>Nombre de usuario:</label>
+            <input
+              type="text"
+              name="username"
+              value={username}
+              onChange={handleUsernameChange} class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            />
+          </div>
           <br />
-          <label>Email:</label>
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleEmailChange}
-          />
+          <div class="relative z-0 w-full mb-6 group">
+            <label>Email:</label>
+            <input
+              type="email"
+              name="email"
+              value={email}
+              onChange={handleEmailChange} class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            />
+          </div>
           <br />
-          <label>Password:</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handlePasswordChange}
-          />
+          <div class="relative z-0 w-full mb-6 group">
+            <label>Password:</label>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={handlePasswordChange} class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            />
+          </div>
           <br />
-          <label>Teléfono:</label>
-          <input
-            type="tel"
-            name="telf"
-            value={telf}
-            onChange={handleTelfChange}
-          />
+          <div class="relative z-0 w-full mb-6 group">
+            <label>Teléfono:</label>
+            <input
+              type="tel"
+              name="telf"
+              value={telf}
+              onChange={handleTelfChange} class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            />
+          </div>
           <br />
-
-          <label>Código Postal:</label>
-          <input type="text" name="cp" value={cp} onChange={handleCpChange} />
+          <div class="relative z-0 w-full mb-6 group">
+            <label>Código Postal:</label>
+            <input type="text" name="cp" value={cp} onChange={handleCpChange} class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" />
+          </div>
         </div>
       ) : (
         <div></div>
@@ -160,69 +169,85 @@ function Signup() {
         <div>
           <hr />
           <h2>Datos de la empresa:</h2>
-          <label>País:</label>
-          <input
-            type="text"
-            name="pais"
-            value={pais}
-            onChange={handlePaisChange}
-          />
+          <div class="relative z-0 w-full mb-6 group">
+            <label>País:</label>
+            <input
+              type="text"
+              name="pais"
+              value={pais}
+              onChange={handlePaisChange} class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            />
+          </div>
           <br />
-          <label>Provincia:</label>
-          <input
-            type="text"
-            name="provincia"
-            value={provincia}
-            onChange={handleProvinciaChange}
-          />
+          <div class="relative z-0 w-full mb-6 group">
+            <label>Provincia:</label>
+            <input
+              type="text"
+              name="provincia"
+              value={provincia}
+              onChange={handleProvinciaChange} class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            />
+          </div>
           <br />
-          <label>Población:</label>
-          <input
-            type="text"
-            name="poblacion"
-            value={poblacion}
-            onChange={handlePoblacionChange}
-          />
+          <div class="relative z-0 w-full mb-6 group">
+            <label>Población:</label>
+            <input
+              type="text"
+              name="poblacion"
+              value={poblacion}
+              onChange={handlePoblacionChange} class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            />
+          </div>
           <br />
-          <label>Calle:</label>
-          <input
-            type="text"
-            name="calle"
-            value={calle}
-            onChange={handleCalleChange}
-          />
+          <div class="relative z-0 w-full mb-6 group">
+            <label>Calle:</label>
+            <input
+              type="text"
+              name="calle"
+              value={calle}
+              onChange={handleCalleChange} class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            />
+          </div>
           <br />
-          <label>Número:</label>
-          <input
-            type="text"
-            name="numero"
-            value={numero}
-            onChange={handleNumeroChange}
-          />
+          <div class="relative z-0 w-full mb-6 group">
+            <label>Número:</label>
+            <input
+              type="text"
+              name="numero"
+              value={numero}
+              onChange={handleNumeroChange} class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            />
+          </div>
           <br />
-          <label>Piso:</label>
-          <input
-            type="text"
-            name="piso"
-            value={piso}
-            onChange={handlePisoChange}
-          />
+          <div class="relative z-0 w-full mb-6 group">
+            <label>Piso:</label>
+            <input
+              type="text"
+              name="piso"
+              value={piso}
+              onChange={handlePisoChange} class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            />
+            <div />
+            <br />
+            <div class="relative z-0 w-full mb-6 group"></div>
+            <label>CIF:</label>
+            <input
+              type="text"
+              name="cif"
+              value={cif}
+              onChange={handleCifChange} class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            />
+          </div>
           <br />
-          <label>CIF:</label>
-          <input
-            type="text"
-            name="cif"
-            value={cif}
-            onChange={handleCifChange}
-          />
-          <br />
-          <label>Razón Social:</label>
-          <input
-            type="text"
-            name="rSocial"
-            value={rSocial}
-            onChange={handleRSocialChange}
-          />
+          <div class="relative z-0 w-full mb-6 group">
+            <label>Razón Social:</label>
+            <input
+              type="text"
+              name="rSocial"
+              value={rSocial}
+              onChange={handleRSocialChange} class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            />
+          </div>
         </div>
       ) : (
         <div></div>
