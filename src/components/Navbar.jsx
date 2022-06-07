@@ -27,7 +27,7 @@ function Navbar() {
       {user !== null && <p>Bienvenido: {user.username}</p>}
 
       {isLoggedIn === true ? (
-        <nav>
+        <nav className="">
           <NavLink to="/" style={toggleStyles}> Home </NavLink>
           <NavLink to="/servicios/crear" style={toggleStyles}> Crear servicio </NavLink>
         <NavLink to="/presupuestos" style={toggleStyles}> Ver tus presupuestos </NavLink>

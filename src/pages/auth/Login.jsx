@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { loginService } from "../../services/auth.services";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context.js";
+import { Link } from "react-router-dom";
 
 function Login() {
   const { authenticateUser } = useContext(AuthContext);
@@ -43,33 +44,61 @@ function Login() {
   };
 
   return (
-    <div>
-      <h1>Log In</h1>
-
-      <form onSubmit={handleLogin}>
-        <label>Email:</label>
+    <div className="p-4 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-green-800 dark:border-gray-700">
+      <h5 class="text-xl font-800 text-gray-900 dark:text-white">
+        Accede a Dr.Forest
+      </h5>
+      <br />
+      <form
+        className="p-4 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700"
+        onSubmit={handleLogin}
+      >
+        <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+          Email:
+        </label>
         <input
           type="email"
           name="email"
           value={email}
           onChange={handleEmailChange}
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+          placeholder="name@dr-forest.com"
         />
         <br />
 
-        <label>Password:</label>
+        <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+          Contraseña:
+        </label>
         <input
           type="password"
           name="password"
           value={password}
           onChange={handlePasswordChange}
+          placeholder="••••••••"
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
         />
 
         <br />
 
         {errorMessage !== null && <p>{errorMessage}</p>}
-
-        <button type="submit">Login</button>
+        <br />
+        <button
+          type="submit"
+          class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          Acceder
+        </button>
       </form>
+
+      <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+        ¿No estas registrado?{" "}
+        <Link
+          to={"/signup"}
+          className="text-blue-700 hover:underline dark:text-blue-500"
+        >
+          Regístrate
+        </Link>
+      </div>
     </div>
   );
 }
