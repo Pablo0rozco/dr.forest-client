@@ -1,13 +1,17 @@
 import { useNavigate } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { editProfileService, getProfileService, uploadService } from "../../services/profile.services"
+import { AuthContext } from "../../context/auth.context"
+
 
 function ProfileEdit() {
+
+  const {user} = useContext(AuthContext)
   
 
-  const [ username, setUserName ] = useState(null)
-  const [ email, setEmail ] = useState(null)
-//   const [ img, setImg ] = useState()
+  const [ username, setUserName ] = useState(user.username)
+  const [ email, setEmail ] = useState(user.email)
+
 
   const navigate = useNavigate()
 
@@ -18,12 +22,18 @@ function ProfileEdit() {
     getUserData()
   }, [])
 
-  const getUserData = async () => {
+  const getUserData = async () => {      
+
 
     try {
-      const response = await getProfileService()
-      setUserName(response.data.username)
-      setEmail(response.data.email)
+      const objData = {
+          username,
+          email
+      }
+      const response = await getProfileService(objData)
+      console.log(response.data)
+      setUserName(username)
+      setEmail(email)
     //   setImg(response.data.img)
 
     } catch (error) {
@@ -68,14 +78,12 @@ function ProfileEdit() {
 
 //   }
 
-  if (!username) {
-      return <h3>...Loading</h3>
-  }
+//   if (!username) {
+//       return <h3>...Loading</h3>
+//   }
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-
       <label>Nombre de usuario:</label>
         <input 
           type="text" 
@@ -83,7 +91,6 @@ function ProfileEdit() {
           value={username} 
           onChange={handleUserNameChange} 
         />
-
       <label>Email:</label>
         <input 
           type="email" 
@@ -93,18 +100,12 @@ function ProfileEdit() {
         />
 
         {/* <label htmlFor="image">Imagen</label>
-        <input type="file" name="img" onChange={handleImgChange} /> */}
+        <input type="file" name="img" onChange={handleImgChange} /> */}        
 
-        
-
-        <button type="submit">Actualizar</button>
-
-      </form>
+        <button onClick={handleSubmit}>Actualizar</button>     
 
       {/* <img src={img} alt="profile-pic" width={100}/> */}
-
     </div>
   )
 }
-
 export default ProfileEdit
