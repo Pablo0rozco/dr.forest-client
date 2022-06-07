@@ -13,6 +13,9 @@ import DetallesS from "./pages/servicios/DetallesS";
 import DetallesPresupuesto from "./pages/presupuesto/DetallesPresupuesto";
 import EditarPresupuesto from "./pages/presupuesto/EditarPresupuesto";
 import ListarPresupuesto from "./pages/presupuesto/ListarPresupuesto";
+import IsPrivate from "./components/isPrivate";
+
+
 
 function App() {
   return (
@@ -25,15 +28,15 @@ function App() {
         <Route path="/login" element={<Login />} />
 
         {/* RUTAS DE SERVICIOS */}
-        <Route path="/servicios/crear" element={<CrearS />} />
-        <Route path="/servicios/:id/editar" element={<EditarS />} />
+        <Route path="/servicios/crear" element={<IsPrivate><CrearS /></IsPrivate>  } />
+        <Route path="/servicios/:id/editar" element={<IsPrivate><EditarS /></IsPrivate>} />
         <Route path="/servicios/:id/detalles" element={<DetallesS />} />
 
         {/* RUTAS DE PRESUPUESTOS */}
         <Route path="/presupuestos" element={<ListarPresupuesto />} />
-        <Route path="/presupuestos/crear/:id" element={<Presupuestos />} />
-        <Route path="/presupuestos/:id/detalles" element={<DetallesPresupuesto />} />
-        <Route path="/presupuestos/editar/:id" element={<EditarPresupuesto />} />
+        <Route path="/presupuestos/crear/:id" element={<IsPrivate><Presupuestos /></IsPrivate>} />
+        <Route path="/presupuestos/:id/detalles" element={<IsPrivate><DetallesPresupuesto /></IsPrivate>} />
+        <Route path="/presupuestos/editar/:id" element={<IsPrivate><EditarPresupuesto /></IsPrivate>} />
 
 
 

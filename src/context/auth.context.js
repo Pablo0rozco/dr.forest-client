@@ -22,6 +22,7 @@ function AuthWrapper(props) {
       setUser(response.data);
       setIsLoadingUser(false);
       //! Setea si el usuario es cliente o profesional
+      
       if (response.data.userType === "cliente") {
         setIsCliente(true);
       } else if (response.data.userType === "profesional") {
@@ -37,8 +38,8 @@ function AuthWrapper(props) {
       setIsLoadingUser(false);
     }
   };
-  console.log("Es un cliete=" + isCliente);
-  console.log(isProfesional);
+  console.log("Es un cliente=" + isCliente);
+  console.log("Es un profesional=" + isProfesional);
   const passedContext = {
     isLoggedIn,
     user,
