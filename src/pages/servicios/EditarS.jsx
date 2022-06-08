@@ -33,7 +33,7 @@ function EditarS() {
         utilidades,
       };
       await editarServicioService(id, servicios);
-      navigate(`/servicios/${id}`);
+      navigate(`/servicios/${id}/detalles`);
     } catch (error) {
       if (error.response.status === 400) {
         setErrorMessage(error.response.data);
@@ -65,7 +65,7 @@ function EditarS() {
   return (
     <div>
       <label>Imagen:</label>
-      <input type="img" name="img" value={img} onChange={handleImgChange} />
+      <input type="text" name="img" value={img} onChange={handleImgChange} />
       <br />
 
       <label>Nombre:</label>

@@ -40,7 +40,7 @@ function Navbar() {
           <nav>
             <NavLink to="/" style={toggleStyles}> Home </NavLink>
             <NavLink to="/servicios/crear" style={toggleStyles}> Crear servicio </NavLink>
-            <NavLink to="/presupuestos" style={toggleStyles}> Ver Solicitudes </NavLink>  
+            <NavLink to="/presupuestos/empresa" style={toggleStyles}> Ver Solicitudes </NavLink>  
             <NavLink to="/perfil" style={toggleStyles}>Ver Perfil</NavLink>          
             <button onClick={handleLogout}>Cerrar Sesion</button>
           </nav>
@@ -52,7 +52,8 @@ function Navbar() {
       {(isLoggedIn === true && isCliente === true) && (
         <nav>
           <NavLink  to="/" style={toggleStyles}> Home </NavLink>          
-          <NavLink  to="/presupuestos" style={toggleStyles}> Ver tus presupuestos </NavLink>
+         <NavLink  to="/presupuestos" style={toggleStyles}> Ver tus presupuestos </NavLink> 
+          
           <NavLink  to="/perfil" style={toggleStyles}>Ver Perfil</NavLink>
             <button onClick={handleLogout}>Cerrar Sesion</button>
         </nav>

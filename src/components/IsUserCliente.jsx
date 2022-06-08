@@ -8,7 +8,7 @@ function IsUserCliente(props) {
   if (isCliente === true) {
     return props.children;
   } else {
-    return <Navigate to="/login" />;
+    return <Navigate to="/signup" />;
   }
 }
 

@@ -25,7 +25,7 @@ function ListarPresupuesto() {
   console.log(presupuestoList);
 
   return (
-    <div>
+    <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
       <h1>Tus Presupuestos</h1>
       <table>
         <thead>
@@ -53,9 +53,7 @@ function ListarPresupuesto() {
                   : eachP.precio + "€"}
               </td>
               <td>{eachP.estado}</td>
-              <Link to={`/presupuestos/editar/${eachP.servicioId._id}`}>
-                Editar
-              </Link>
+              <Link to={`/presupuestos/editar/${eachP._id}`}>Editar</Link>
             </tr>
           );
         })}

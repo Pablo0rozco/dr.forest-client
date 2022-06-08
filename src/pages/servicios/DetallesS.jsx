@@ -49,22 +49,21 @@ function DetallesS() {
       <small>{detalles.breveDesc}</small>
       <p>{detalles.descripcion}</p>
       <p>{detalles.utilidades}</p>
-      {user.userType === "cliente" ? (
+      {user.userType === "cliente" && (
         <Link to={`/presupuestos/crear/${id}`}>
           <button>Pedir presupuesto</button>
         </Link>
-      ) : (
+      )}
+
+      {user.userType === "profesional" && (
         <div>
           <Link to={`/servicios/${id}/editar`}>
             <button>Editar Servicio</button>
           </Link>
 
-          <Link to={`/presupuestos/crear/${id}`}>
-            <button>Pedir presupuesto</button>
-          </Link>
+          <button onClick={handleDelete}>Borrar el servicio</button>
         </div>
       )}
-      ;
     </div>
   );
 }
