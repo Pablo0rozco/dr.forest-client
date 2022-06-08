@@ -7,7 +7,7 @@ import Error from "./pages/Error";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import CrearS from "./pages/servicios/CrearS";
-import Presupuestos from "./pages/presupuesto/Patata";
+import Presupuestos from "./pages/presupuesto/Presupuestos";
 import EditarS from "./pages/servicios/EditarS";
 import DetallesS from "./pages/servicios/DetallesS";
 import DetallesPresupuesto from "./pages/presupuesto/DetallesPresupuesto";

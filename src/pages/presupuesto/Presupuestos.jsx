@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { crearPresupuestoService } from "../../services/presupuestos.services.js";
 import { detallesServicioService } from "../../services/servicios.sevices.js";
 
-function Patata() {
+function Presupuestos() {
   const { id } = useParams();
   const [idPro, setIdPro] = useState("");
 
@@ -196,4 +196,4 @@ function Patata() {
   );
 }
 
-export default Patata;
+export default Presupuestos;
