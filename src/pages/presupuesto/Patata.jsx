@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { crearPresupuestoService } from "../../services/presupuestos.services.js";
 import { detallesServicioService } from "../../services/servicios.sevices.js";
 
-function Presupuestos() {
+function Patata() {
   const { id } = useParams();
   const [idPro, setIdPro] = useState("");
 
@@ -111,8 +111,8 @@ function Presupuestos() {
   ];
 
   return (
-    <div>
-      <br />
+    <div className="container-presupuesto">
+      
       <label>Fecha:</label>
       <input
         type="date"
@@ -120,7 +120,7 @@ function Presupuestos() {
         value={form.fecha}
         onChange={handlePreFormChange}
       />
-      <br />
+      
       <label>Provincia:</label>
       <select
         type="text"
@@ -133,7 +133,7 @@ function Presupuestos() {
         })}
       </select>
 
-      <br />
+      
       <label>Población:</label>
       <input
         type="text"
@@ -141,7 +141,7 @@ function Presupuestos() {
         value={form.poblacion}
         onChange={handlePreFormChange}
       />
-      <br />
+      
       <label>Calle:</label>
       <input
         type="text"
@@ -149,7 +149,7 @@ function Presupuestos() {
         value={form.calle}
         onChange={handlePreFormChange}
       />
-      <br />
+      
       <label>Numero:</label>
       <input
         type="number"
@@ -157,7 +157,7 @@ function Presupuestos() {
         value={form.numero}
         onChange={handlePreFormChange}
       />
-      <br />
+      
       <label>Piso:</label>
       <input
         type="text"
@@ -165,7 +165,7 @@ function Presupuestos() {
         value={form.piso}
         onChange={handlePreFormChange}
       />
-      <br />
+      
       <label>Observaciones:</label>
       <input
         type="text"
@@ -173,7 +173,7 @@ function Presupuestos() {
         value={form.observaciones}
         onChange={handlePreFormChange}
       />
-      <br />
+      
       <label>Numero de Empleados:</label>
       <input
         type="number"
@@ -181,7 +181,7 @@ function Presupuestos() {
         value={form.numEmpleados}
         onChange={handlePreFormChange}
       />
-      <br />
+      
       <label>Metros cuadrados:</label>
       <input
         type="number"
@@ -190,10 +190,10 @@ function Presupuestos() {
         onChange={handlePreFormChange}
       />
 
-      <br />
+      
       <button onClick={handleAddPresupuesto}>Solicitar Presupuesto</button>
     </div>
   );
 }
 
-export default Presupuestos;
+export default Patata;

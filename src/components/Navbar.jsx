@@ -33,6 +33,8 @@ function Navbar() {
       {/* // 1º Si Logeado y Profesional */}
       <div>
         {isLoggedIn === true && isProfesional === true && (
+
+          
           <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
             <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
               <div className="text-sm lg:flex-grow">
