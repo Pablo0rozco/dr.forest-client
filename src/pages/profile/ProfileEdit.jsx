@@ -5,34 +5,34 @@ import { AuthContext } from "../../context/auth.context";
 import { editarPerfilService } from "../../services/editProfile.services";
 
 function ProfileEdit() {
-  const { user } = useContext(AuthContext);
-
-  const [username, setUserName] = useState(user.username);
-  const [email, setEmail] = useState(user.email);
-  //   const [ img, setImg ] = useState()
+  
+  const { user, setUser } = useContext(AuthContext);  
+  // const {username, setUserName} = useContext(AuthContext);
+  // const {email, setUserName} = useContext(AuthContext)
+  
 
   const navigate = useNavigate();
 
-  const handleUserNameChange = (e) => setUserName(e.target.value);
-  const handleEmailChange = (e) => setEmail(e.target.value);
+  const handleUserNameChange = (e) => setUser(e.target.value);
+  const handleEmailChange = (e) => setUser(e.target.value);
 
   const handleSubmit = async (e) => {
     try {
       const userUpdate = {
-        username,
-        email,
+        // username,
+        // email,
         //   img
       };
       const response = await editarPerfilService(userUpdate);
       console.log(response.data);
-      navigate("/perfil/editar");
+      navigate("/perfil");
     } catch (err) {
       console.log(err);
       navigate("/error");
     }
   };
 
-  if (!username) {
+  if (!user) {
     return <h3>...Loading</h3>;
   }
 
@@ -41,16 +41,16 @@ function ProfileEdit() {
       <label>Nombre de usuario:</label>
       <input
         type="text"
-        name="username"
-        value={username}
+        name="user.username"
+        // value={username}
         onChange={handleUserNameChange}
       />
 
       <label>Email:</label>
       <input
         type="email"
-        name="email"
-        value={email}
+        name="user.email"
+        // value={email}
         onChange={handleEmailChange}
       />
 

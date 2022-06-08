@@ -1,12 +1,11 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import {useContext} from "react"
-import {AuthContext} from "../context/auth.context.js"
-
-
+import { useContext } from "react";
+import { AuthContext } from "../context/auth.context.js";
 
 function Navbar() {
-  const {isLoggedIn, user, authenticateUser, isCliente, isProfesional } = useContext(AuthContext)
-  const navigate = useNavigate()
+  const { isLoggedIn, user, authenticateUser, isCliente, isProfesional } =
+    useContext(AuthContext);
+  const navigate = useNavigate();
 
   const toggleStyles = (navInfo) => {
     return navInfo.isActive === true ? activeStyles : inActiveStyles;
@@ -21,58 +20,158 @@ function Navbar() {
   };
 
   const handleLogout = () => {
-    
-    localStorage.removeItem("authToken")
-    authenticateUser()
-    navigate("/")
-  }
+    localStorage.removeItem("authToken");
+    authenticateUser();
+    navigate("/");
+  };
   console.log(user);
 
   //! RETURN:
-  // 1º Si Logeado y Profesional
-  // 2º Si logeado y cliente
-  // 3º Si no logeado
+
   return (
-    <div  >
-      <div  >
-        
-        {(isLoggedIn === true && isProfesional === true) && (
-          <nav>
-            <NavLink to="/" style={toggleStyles}> Home </NavLink>
-            <NavLink to="/servicios/crear" style={toggleStyles}> Crear servicio </NavLink>
-            <NavLink to="/presupuestos/empresa" style={toggleStyles}> Ver Solicitudes </NavLink>  
-            <NavLink to="/perfil" style={toggleStyles}>Ver Perfil</NavLink>          
-            <button onClick={handleLogout}>Cerrar Sesion</button>
+    <div>
+      {/* // 1º Si Logeado y Profesional */}
+      <div>
+        {isLoggedIn === true && isProfesional === true && (
+          <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+            <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+              <div class="text-sm lg:flex-grow">
+                <a
+                  href="#responsive-header"
+                  class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+                >
+                  <NavLink to="/" style={toggleStyles}>
+                    {" "}
+                    Home{" "}
+                  </NavLink>
+                </a>
+                <a
+                  href="#responsive-header"
+                  class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+                >
+                  <NavLink to="/presupuestos/empresa" style={toggleStyles}>
+                    {" "}
+                    Ver Solicitudes{" "}
+                  </NavLink>
+                </a>
+                <a
+                  href="#responsive-header"
+                  class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
+                >
+                  <NavLink to="/servicios/crear" style={toggleStyles}>
+                    {" "}
+                    Crear servicio{" "}
+                  </NavLink>
+                </a>
+
+                <a
+                  href="#responsive-header"
+                  class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
+                >
+                  <NavLink to="/perfil" style={toggleStyles}>
+                    Ver Perfil
+                  </NavLink>
+                </a>
+
+                <a
+                  href="#responsive-header"
+                  class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
+                >
+                  <button onClick={handleLogout}>Cerrar Sesion</button>
+                </a>
+              </div>
+            </div>
           </nav>
         )}
       </div>
 
-      <div>   
-     
-      {(isLoggedIn === true && isCliente === true) && (
-        <nav>
-          <NavLink  to="/" style={toggleStyles}> Home </NavLink>          
-         <NavLink  to="/presupuestos" style={toggleStyles}> Ver tus presupuestos </NavLink> 
-          
-          <NavLink  to="/perfil" style={toggleStyles}>Ver Perfil</NavLink>
-            <button onClick={handleLogout}>Cerrar Sesion</button>
-        </nav>
-      )}      
-      </div>        
+      {/* // 2º Si logeado y cliente */}
       <div>
+        {isLoggedIn === true && isCliente === true && (
+          <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+            <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+              <div class="text-sm lg:flex-grow">
+                <a
+                  href="#responsive-header"
+                  class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+                >
+                  <NavLink to="/" style={toggleStyles}>
+                    {" "}
+                    Home{" "}
+                  </NavLink>
+                </a>
 
-      {(isLoggedIn === false) && (
-        <nav>
-          <NavLink  to="/" style={toggleStyles}> Home </NavLink>  
-          <NavLink  to="/signup" style={toggleStyles}> Registrase </NavLink>        
-          <NavLink   to="/login" style={toggleStyles}> Acceder </NavLink>                 
-        </nav>
-      )}  
+                <a
+                  href="#responsive-header"
+                  class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+                >
+                  <NavLink to="/presupuestos" style={toggleStyles}>
+                    {" "}
+                    Ver tus presupuestos{" "}
+                  </NavLink>
+                </a>
 
+                <a
+                  href="#responsive-header"
+                  class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
+                >
+                  <NavLink to="/perfil" style={toggleStyles}>
+                    Ver Perfil
+                  </NavLink>
+                </a>
+
+                <a
+                  href="#responsive-header"
+                  class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
+                >
+                  <button onClick={handleLogout}>Cerrar Sesion</button>
+                </a>
+              </div>
+            </div>
+          </nav>
+        )}
       </div>
 
+      {/* // 3º Si no logeado */}
+      <div>
+        {isLoggedIn === false && (
+          <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+            <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+              <div class="text-sm lg:flex-grow">
+                <a
+                  href="#responsive-header"
+                  class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+                >
+                  <NavLink to="/" style={toggleStyles}>
+                    {" "}
+                    Home{" "}
+                  </NavLink>
+                </a>
+
+                <a
+                  href="#responsive-header"
+                  class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+                >
+                  <NavLink to="/signup" style={toggleStyles}>
+                    {" "}
+                    Registrase{" "}
+                  </NavLink>
+                </a>
+                <a
+                  href="#responsive-header"
+                  class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
+                >
+                  <NavLink to="/login" style={toggleStyles}>
+                    {" "}
+                    Acceder{" "}
+                  </NavLink>
+                </a>
+              </div>
+            </div>
+          </nav>
+        )}
+      </div>
     </div>
-    
   );
 }
 
