@@ -1,6 +1,6 @@
-import { useContext, useEffect, useState } from "react"
-import { Link, useNavigate, useParams } from "react-router-dom"
-import { getProfileService } from "../../services/profile.services"
+import { useContext} from "react"
+import { Link } from "react-router-dom"
+
 import {AuthContext} from "../../context/auth.context"
 
 

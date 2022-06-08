@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import { useContext, useEffect, useState } from "react"
-import { editProfileService, getProfileService, uploadService } from "../../services/profile.services"
+import { editProfileService} from "../../services/profile.services"
 import { AuthContext } from "../../context/auth.context"
 
 
@@ -30,7 +30,7 @@ function ProfileEdit() {
           username,
           email
       }
-      const response = await getProfileService(objData)
+      const response = await editProfileService(objData)
       console.log(response.data)
       setUserName(username)
       setEmail(email)
