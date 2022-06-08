@@ -1,11 +1,9 @@
-import axios from "axios"
-import { useContext } from "react";
-import { AuthContext } from "../context/auth.context";
+import axios from "axios";
 
-const {user} = useContext(AuthContext)
+
 const service = axios.create({
-  baseURL: `${process.env.REACT_APP_SERVER_URL}`
-})
+  baseURL: `${process.env.REACT_APP_SERVER_URL}`,
+});
 
 service.interceptors.request.use((config) => {
   const storedToken = localStorage.getItem("authToken");
@@ -15,20 +13,6 @@ service.interceptors.request.use((config) => {
   return config;
 });
 
-// const getProfileService = () => {
-//   return service.get("/")
-// }
 
-const editProfileService = (userUpdate) => {
-  return service.patch(`perfil/editar/${user._id}`, userUpdate)
-}
 
-const uploadService = (uploadForm) => {
-  return service.post("/uploader", uploadForm)
-}
-
-export {
-  // getProfileService,
-  editProfileService,
-  uploadService
-}
+export default service

@@ -10,6 +10,8 @@ function AuthWrapper(props) {
   const [isLoadingUser, setIsLoadingUser] = useState(true);
   const [isCliente, setIsCliente] = useState(false);
   const [isProfesional, setProfesional] = useState(false);
+  const [username, setUserName] = useState(null)
+  const [email, setEmail] = useState(null)
   console.log(isLoggedIn);
   const authenticateUser = async () => {
     setIsLoadingUser(true);
@@ -20,7 +22,9 @@ function AuthWrapper(props) {
       console.log("el payload es:", response.data);
       setIsLoggedIn(true);
       setUser(response.data);
+      setUserName(response.data.username)
       setIsLoadingUser(false);
+      // return setIsLoggedIn(true)
       //! Setea si el usuario es cliente o profesional
       
       if (response.data.userType === "cliente") {
@@ -46,7 +50,13 @@ function AuthWrapper(props) {
     isCliente,
     isProfesional,
     authenticateUser,
+    setUserName,
+    setEmail,
+    username,
+    email
   };
+
+  
 
   useEffect(() => {
     authenticateUser();
