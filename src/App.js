@@ -93,7 +93,7 @@ function App() {
           }
         />
         <Route
-          path="/perfil/editar"
+          path="/editarPerfil"
           element={
             <IsPrivate>
               <ProfileEdit />

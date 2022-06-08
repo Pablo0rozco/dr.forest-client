@@ -33,9 +33,9 @@ function Navbar() {
   // 2º Si logeado y cliente
   // 3º Si no logeado
   return (
-    <div>
-      <div>
-        {user !== null && <p>Bienvenido: {user.username}</p>}
+    <div  >
+      <div  >
+        
         {(isLoggedIn === true && isProfesional === true) && (
           <nav>
             <NavLink to="/" style={toggleStyles}> Home </NavLink>
@@ -48,24 +48,12 @@ function Navbar() {
       </div>
 
       <div>   
-      {isLoggedIn === true && (
-        <nav className="">
-          <NavLink to="/" style={toggleStyles}> Home </NavLink>
-          <NavLink to="/servicios/crear" style={toggleStyles}> Crear servicio </NavLink>
-        {user.userType === "cliente"&& <NavLink to="/presupuestos" style={toggleStyles}> Ver tus presupuestos </NavLink>
-        }
-         {user.userType === "profesional"&& <NavLink to="/presupuestos/empresa" style={toggleStyles}> Ver tus presupuestos </NavLink>
-        }
-
-          <button onClick={handleLogout}>Cerrar Sesion</button>
-
-        </nav>
-      ) }
+     
       {(isLoggedIn === true && isCliente === true) && (
         <nav>
-          <NavLink to="/" style={toggleStyles}> Home </NavLink>          
-          <NavLink to="/presupuestos" style={toggleStyles}> Ver tus presupuestos </NavLink>
-          <NavLink to="/perfil" style={toggleStyles}>Ver Perfil</NavLink>
+          <NavLink  to="/" style={toggleStyles}> Home </NavLink>          
+          <NavLink  to="/presupuestos" style={toggleStyles}> Ver tus presupuestos </NavLink>
+          <NavLink  to="/perfil" style={toggleStyles}>Ver Perfil</NavLink>
             <button onClick={handleLogout}>Cerrar Sesion</button>
         </nav>
       )}      
@@ -74,9 +62,9 @@ function Navbar() {
 
       {(isLoggedIn === false) && (
         <nav>
-          <NavLink to="/" style={toggleStyles}> Home </NavLink>  
-          <NavLink to="/signup" style={toggleStyles}> Registrase </NavLink>        
-          <NavLink to="/login" style={toggleStyles}> Acceder </NavLink>                 
+          <NavLink  to="/" style={toggleStyles}> Home </NavLink>  
+          <NavLink  to="/signup" style={toggleStyles}> Registrase </NavLink>        
+          <NavLink   to="/login" style={toggleStyles}> Acceder </NavLink>                 
         </nav>
       )}  
 

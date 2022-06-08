@@ -5,8 +5,6 @@ import { listarPresupuestosEmpresaService } from "../../services/presupuestos.se
 
 function ListarPresupuestosProfesional() {
   const [presupuestoEmpresaList, setPresupuestoEmpresaList] = useState([]);
-  const { user } = useContext(AuthContext);
- 
 
   const navigate = useNavigate();
 
@@ -27,19 +25,21 @@ function ListarPresupuestosProfesional() {
   return (
     <div>
       <h1>Tus Presupuestos</h1>
-
-      {presupuestoEmpresaList.map((eachP) => {
-        return (
-          <div>
-            <h2>{eachP.userId.username}</h2>
-            <h2>{eachP.userId.username}</h2>
-            <h2>{eachP.userId.username}</h2>
-            <h2>{eachP.userId.username}</h2>
-            <h2>{eachP.estado}</h2>
-            <hr />
-          </div>
-        );
-      })}
+      <table>
+        <thead>
+          <th>Nombre</th>
+        </thead>
+        {presupuestoEmpresaList.map((eachP) => {
+          return (
+            <tr>
+              <td>{eachP.estado}</td>
+              <td>{eachP.estado}</td>
+              <td>{eachP.estado}</td>
+              <td>{eachP.estado}</td>
+            </tr>
+          );
+        })}
+      </table>
     </div>
   );
 }
