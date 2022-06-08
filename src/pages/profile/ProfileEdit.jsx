@@ -4,7 +4,6 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/auth.context";
 import { editarPerfilService } from "../../services/editProfile.services";
 
-
 function ProfileEdit() {
   const { user } = useContext(AuthContext);
 
