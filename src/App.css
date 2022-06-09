@@ -67,48 +67,32 @@
   margin: 0.5rem;
 } */
 
-html {
-  font-family: 'Montserrat', Arial, sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
 
-body {
-  background: #F2F3EB;
-}
 
-button {
-  overflow: visible;
-}
-
-button, select {
-  text-transform: none;
-}
-
-button, input, select, textarea {
-  color: #5A5A5A;
-  font: inherit;
-  margin: 0;
-}
-
-input {
-  line-height: normal;
-}
-
-textarea {
-  overflow: auto;
-}
-
-#container-presupuesto {
+#container {
   border: solid 3px #474544;
   max-width: 768px;
   margin: 60px auto;
   position: relative;
 }
 
+
+
+
+
+
+
+
+
+
 form {
   padding: 37.5px;
   margin: 50px 0;
+}
+
+.name {
+	float: left;
+	width: 45%;
 }
 
 h1 {
@@ -186,12 +170,13 @@ input[type='text']:focus, [type='email']:focus, textarea:focus {
   align-items:initial;
 }
 .numero {
-  
+    margin-left: 10px;
     float: left;
     width: 45%;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     flex-direction: row;
     align-items:initial;
+    
     
     
   
@@ -240,6 +225,11 @@ textarea {
 :-ms-input-placeholder {
 	color: #474544;
 }
+.input {
+  justify-content: center;
+  align-items: center;
+
+}
 
 #form_button {
   margin-top: 20px;
@@ -248,17 +238,21 @@ textarea {
   color: #474544;
   cursor: pointer;
   display: inline-block;
+  
   font-family: 'Helvetica', Arial, sans-serif;
   font-size: 0.875em;
   font-weight: bold;
   outline: none;
   padding: 20px 35px;
+  
+  margin-bottom: 30px;
   text-transform: uppercase;
   -webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	-ms-transition: all 0.3s;
 	-o-transition: all 0.3s;
 	transition: all 0.3s;
+  
 }
 
 #form_button:hover {

@@ -63,18 +63,25 @@ function EditarS() {
   };
 
   return (
-    <div>
-      <label>Imagen:</label>
+    <div id="container-presupuesto">
+      <div className="contact_form">
+        <label>Imagen:</label>
       <input type="text" name="img" value={img} onChange={handleImgChange} />
+      </div>
+      
       <br />
 
-      <label>Nombre:</label>
+      <div className="name">
+         <label>Nombre:</label>
       <input
         type="text"
         name="nombre"
         value={nombre}
         onChange={handleNombreChange}
       />
+      </div>
+
+     
       <br />
       <label>Descripción breve:</label>
       <input

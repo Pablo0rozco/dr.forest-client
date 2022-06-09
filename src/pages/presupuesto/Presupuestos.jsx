@@ -50,7 +50,7 @@ function Presupuestos() {
 
       console.log(response);
 
-      navigate("/crear/:id");
+      navigate("/presupuestos");
     } catch (error) {
       console.log(error);
       navigate("/error");
@@ -112,94 +112,102 @@ function Presupuestos() {
 
   return (
 
-  <div id="container-presupuesto">
+      // 1º GENERAL CONTAINER
+      <div id="container">
 
-    <h1>&bull; Solicita tu presupuesto &bull;</h1>
+        {/* 2º TITULO DEL FORMULARIO */}
+        <h1>&bull; Solicita tu presupuesto &bull;</h1>
 
-    <div className="underline"></div>   
-
-
-    {/* FECHA */}
-
-   <form action="#" method="post" id="contact_form">
-    <div className="fecha">
-      <label for="fecha">Fecha </label>
-      <input type="date" value={form.fecha} name="fecha" onChange={handlePreFormChange} id="fecha_input" required/>
-    </div>
+        
 
 
-    {/* PROVINCIA */}
-    <div className="subject">
-      <label for="subject"></label>
-      <select placeholder="Provincia" id="subject_input" required type="text"
-        name="provincia"
-        value={form.provincia}
-        onChange={handlePreFormChange}>
-        {provincias.map((eachP) => {
-          return <option>{eachP}</option>;
-        })}
-      </select>
-    </div>
+        {/* 4º CONTACT FORM */}
+              {/* FECHA */} 
+              <br />
 
-    {/* POBLACION */}
-    <div className="poblacion">
-      <label for="poblacion"></label>
-      <input type="text" placeholder="Población" name="poblacion" id="poblacion_input" required value={form.poblacion}
-        onChange={handlePreFormChange} />
-    </div>
-
-    {/* CALLE */}
-
-    <div className="calle">
-      <label for="calle"></label>
-      <input type="text" value={form.calle} onChange={handlePreFormChange} placeholder="Calle" name="calle" id="calle_input" required/>
-    </div>
+            <div id="contact_form">
+            
+              <div className="fecha">
+                <label for="fecha">Fecha </label>
+                <input type="date" value={form.fecha} name="fecha" onChange={handlePreFormChange} id="fecha_input" required/>
+              </div>
 
 
-    {/* NUMERO */}
-    <div className="numero">
-      <label for="numero">Número </label>
-      <input type="number" value={form.numero} onChange={handlePreFormChange} name="numero" id="numero_input" required/>
-    </div>
+              {/* PROVINCIA */}
+              <div className="numero">
+                <label for="subject"></label>
+                <select placeholder="Provincia" id="subject_input" required type="text"
+                  name="provincia"
+                  value={form.provincia}
+                  onChange={handlePreFormChange}>
+                  {provincias.map((eachP) => {
+                    return <option>{eachP}</option>;
+                  })}
+                </select>
+              </div>
+
+              {/* POBLACION */}
+              <div className="numero">
+                <label for="poblacion"></label>
+                <input type="text" placeholder="Población" name="poblacion" id="poblacion_input" required value={form.poblacion}
+                  onChange={handlePreFormChange} />
+              </div>
+
+              {/* CALLE */}
+
+              <div className="numero">
+                <label for="calle"></label>
+                <input type="text" value={form.calle} onChange={handlePreFormChange} placeholder="Calle" name="calle" id="calle_input" required/>
+              </div>
 
 
-    {/* PISO */}
-
-    <div className="piso">
-      <label for="piso"></label>
-      <input type="text" value={form.piso} onChange={handlePreFormChange} placeholder="Piso" name="piso" id="piso_input" required/>
-    </div>
-    
-
-    {/* OBSERVACIONES */}
-    <div className="observaciones">
-      <label for="observaciones"></label>
-      <textarea name="observaciones" placeholder="Cuéntale al profesional cualquier información que consideres importante" id="message_input" cols="30" rows="5" required></textarea>
-    </div>
+              {/* NUMERO */}
+              <div className="numero">
+                <label for="numero">Número </label>
+                <input type="number" value={form.numero} onChange={handlePreFormChange} name="numero" id="numero_input" required/>
+              </div>
 
 
-    {/* NUMERO DE EMPLEADOS */}
+              {/* PISO */}
 
-    <div className="numEmpleados">
-      <label for="number">Número de Empleados </label>
-      <input type="number" placeholder="Número de Empleados" value={form.numEmpleados} onChange={handlePreFormChange} name="numEmpleados" id="numEmpleados_input" required/>
-    </div>
+              <div className="numero">
+                <label for="piso"></label>
+                <input type="text" value={form.piso} onChange={handlePreFormChange} placeholder="Piso" name="piso" id="piso_input" required/>
+              </div>
+              
+
+              {/* OBSERVACIONES */}
+              <div className="observaciones">
+                <label for="observaciones"></label>
+                <textarea name="observaciones" placeholder="Comental al profesional cualquier información que consideres importante" id="message_input" cols="30" rows="5" required></textarea>
+              </div>
 
 
+              {/* NUMERO DE EMPLEADOS */}
 
-    {/* METROS CUADRADOS */}
-    <div className="metro2">
-      <label for="number">Metros Cuadrados </label>
-      <input type="number" placeholder="Metros cuadrados" value={form.metro2} onChange={handlePreFormChange} name="metro2" id="email_input" required/>
-    </div>
+              <div className="input">
+                <label for="number">Número Empleados </label>
+                <input type="number" placeholder="Número de Empleados" value={form.numEmpleados} onChange={handlePreFormChange} name="numEmpleados" id="numEmpleados_input" required/>
+              </div>
 
-    {/* BOTON */}
-    <div id="form_button">
-      <button onClick={handleAddPresupuesto} type="boton" value="Solicitar Presupuesto">Solicitar</button>
-    </div>
+                  <br />
 
-   </form>
-  </div>
+              {/* METROS CUADRADOS */}
+              <div className="input">
+                <label for="number">Metros Cuadrados </label>
+                <input type="number" placeholder="Metros cuadrados" value={form.metro2} onChange={handlePreFormChange} name="metro2"  required/>
+              </div>
+
+              
+
+
+              {/* BOTON */}
+              <div id="form_button">
+                <button onClick={handleAddPresupuesto} type="boton" value="Solicitar Presupuesto">Solicitar</button>
+              </div>
+
+            </div>
+      </div>
     
   );
 }
