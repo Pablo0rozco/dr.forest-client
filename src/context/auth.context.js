@@ -10,8 +10,8 @@ function AuthWrapper(props) {
   const [isLoadingUser, setIsLoadingUser] = useState(true);
   const [isCliente, setIsCliente] = useState(false);
   const [isProfesional, setProfesional] = useState(false);
-  const [username, setUserName] = useState(null)
-  const [email, setEmail] = useState(null)
+  const [username, setUserName] = useState(null);
+  const [email, setEmail] = useState(null);
   console.log(isLoggedIn);
   const authenticateUser = async () => {
     setIsLoadingUser(true);
@@ -22,11 +22,12 @@ function AuthWrapper(props) {
       console.log("el payload es:", response.data);
       setIsLoggedIn(true);
       setUser(response.data);
-      setUserName(response.data.username)
+
       setIsLoadingUser(false);
       // return setIsLoggedIn(true)
       //! Setea si el usuario es cliente o profesional
-      
+
+      console.log(response.data);
       if (response.data.userType === "cliente") {
         setIsCliente(true);
       } else if (response.data.userType === "profesional") {
@@ -35,6 +36,7 @@ function AuthWrapper(props) {
         setProfesional(false);
         setIsCliente(false);
       }
+      return response.data;
     } catch (error) {
       console.log("El usuario no tiene token o el token no es valido");
       setIsLoggedIn(false);
@@ -53,10 +55,9 @@ function AuthWrapper(props) {
     setUserName,
     setEmail,
     username,
-    email
+    email,
+    setUser,
   };
-
-  
 
   useEffect(() => {
     authenticateUser();

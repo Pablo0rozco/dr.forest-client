@@ -2,34 +2,45 @@ import { useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 
 import { AuthContext } from "../../context/auth.context";
-import { editarPerfilService } from "../../services/editProfile.services";
+import {
+  editarPerfilService,
+  profileService,
+} from "../../services/editProfile.services";
 
 function ProfileEdit() {
-  
-  const { user, setUser } = useContext(AuthContext);  
-  // const {username, setUserName} = useContext(AuthContext);
-  // const {email, setUserName} = useContext(AuthContext)
-  
+  const { user, setUser, authenticateUser } = useContext(AuthContext);
+  const [username, setUsername] = useState(null);
+  const [email, setEmail] = useState(null);
 
   const navigate = useNavigate();
-
-  const handleUserNameChange = (e) => setUser(e.target.value);
-  const handleEmailChange = (e) => setUser(e.target.value);
+  console.log(user);
+  const handleUserNameChange = (e) => setUsername(e.target.value);
+  const handleEmailChange = (e) => setEmail(e.target.value);
 
   const handleSubmit = async (e) => {
     try {
       const userUpdate = {
-        // username,
-        // email,
-        //   img
+        username,
+        email,
       };
-      const response = await editarPerfilService(userUpdate);
-      console.log(response.data);
+      await editarPerfilService(userUpdate);
+
       navigate("/perfil");
     } catch (err) {
       console.log(err);
       navigate("/error");
     }
+  };
+
+  useEffect(() => {
+    getDetailsProfile();
+  }, []);
+
+  const getDetailsProfile = async () => {
+    const response = await profileService();
+    console.log(response.data);
+    setUsername(response.data.username);
+    setEmail(response.data.email);
   };
 
   if (!user) {
@@ -41,16 +52,16 @@ function ProfileEdit() {
       <label>Nombre de usuario:</label>
       <input
         type="text"
-        name="user.username"
-        // value={username}
+        name="username"
+        value={username}
         onChange={handleUserNameChange}
       />
 
       <label>Email:</label>
       <input
         type="email"
-        name="user.email"
-        // value={email}
+        name="email"
+        value={email}
         onChange={handleEmailChange}
       />
 

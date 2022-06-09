@@ -2,7 +2,11 @@
 
 .App {
   text-align: center;
-  margin-left: ;
+  background-image: url("./assets/DCforest.png");
+  background-position: center;
+  background-size: contain;
+
+  min-width: 100vw;
 }
 
 .App-logo {
