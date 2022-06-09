@@ -44,12 +44,13 @@ function Login() {
   };
 
   return (
-    <div className="p-4 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-green-800 dark:border-gray-700">
+    <div id="container" className="p-4 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-green-800 dark:border-gray-700">
       <h5 class="text-xl font-800 text-gray-900 dark:text-white">
         Accede a Dr.Forest
       </h5>
       <br />
-      <form
+      <div id="contact_form">
+        <form
         className="p-4 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700"
         onSubmit={handleLogin}
       >
@@ -88,8 +89,9 @@ function Login() {
         >
           Acceder
         </button>
-      </form>
 
+        
+      </form>
       <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
         ¿No estas registrado?{" "}
         <Link
@@ -99,6 +101,10 @@ function Login() {
           Regístrate
         </Link>
       </div>
+      </div>
+      
+
+      
     </div>
   );
 }

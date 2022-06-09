@@ -90,7 +90,7 @@ function Signup() {
   };
 
   return (
-    <div>
+    <div id="container">
       <h1>Hazte miembro</h1>
 
       <h3>Tipo de usuario</h3>
@@ -121,6 +121,8 @@ function Signup() {
               type="text"
               name="username"
               value={username}
+              className="placeholder:text-black"
+              placeholder="Introduce tu nombre de usuario"
               onChange={handleUsernameChange}
             />
           </div>
@@ -248,7 +250,10 @@ function Signup() {
       )}
 
       {userType === "cliente" || userType === "profesional" ? (
-        <button onClick={handleSignup}>Registrarse</button>
+        <div id="form_button">
+         <button onClick={handleSignup}>Registrarse</button> 
+        </div>
+        
       ) : (
         <div></div>
       )}
