@@ -87,137 +87,144 @@ function ProfileEdit() {
   }
 
   return (
-    <div>
-      {user.userType === "cliente" || user.userType === "profesional" ? (
-        <div>
-          <div class="relative z-0 w-full mb-6 group">
-            <label>Nombre de usuario:</label>
-            <input
-              type="text"
-              name="username"
-              value={username}
-              onChange={handleUsernameChange}
-            />
-          </div>
-          <br />
-          <div class="relative z-0 w-full mb-6 group">
-            <label>Email:</label>
-            <input
-              type="email"
-              name="email"
-              value={email}
-              onChange={handleEmailChange}
-            />
-          </div>
+    <div id="container">
+      <div>
+        {user.userType === "cliente" || user.userType === "profesional" ? (
+          <div>
+            <div class="relative z-0 w-full mb-6 group">
+              <label>Nombre de usuario:</label>
+              <input
+                type="text"
+                name="username"
+                value={username}
+                onChange={handleUsernameChange}
+              />
+            </div>
+            <br />
+            <div class="relative z-0 w-full mb-6 group">
+              <label>Email:</label>
+              <input
+                type="email"
+                name="email"
+                value={email}
+                onChange={handleEmailChange}
+              />
+            </div>
 
-          <br />
-          <div class="relative z-0 w-full mb-6 group">
-            <label>Teléfono:</label>
-            <input
-              type="tel"
-              name="telf"
-              value={telf}
-              onChange={handleTelfChange}
-            />
+            <br />
+            <div class="relative z-0 w-full mb-6 group">
+              <label>Teléfono:</label>
+              <input
+                type="tel"
+                name="telf"
+                value={telf}
+                onChange={handleTelfChange}
+              />
+            </div>
+            <br />
+            <div class="relative z-0 w-full mb-6 group">
+              <label>Código Postal:</label>
+              <input
+                type="text"
+                name="cp"
+                value={cp}
+                onChange={handleCpChange}
+              />
+            </div>
           </div>
-          <br />
-          <div class="relative z-0 w-full mb-6 group">
-            <label>Código Postal:</label>
-            <input type="text" name="cp" value={cp} onChange={handleCpChange} />
-          </div>
-        </div>
-      ) : (
-        <div></div>
-      )}
+        ) : (
+          <div></div>
+        )}
 
-      {user.userType === "profesional" ? (
-        <div>
-          <hr />
-          <h2>Datos de la empresa:</h2>
-          <div class="relative z-0 w-full mb-6 group">
-            <label>País:</label>
-            <input
-              type="text"
-              name="pais"
-              value={pais}
-              onChange={handlePaisChange}
-            />
-          </div>
-          <br />
-          <div class="relative z-0 w-full mb-6 group">
-            <label>Provincia:</label>
-            <input
-              type="text"
-              name="provincia"
-              value={provincia}
-              onChange={handleProvinciaChange}
-            />
-          </div>
-          <br />
-          <div class="relative z-0 w-full mb-6 group">
-            <label>Población:</label>
-            <input
-              type="text"
-              name="poblacion"
-              value={poblacion}
-              onChange={handlePoblacionChange}
-            />
-          </div>
-          <br />
-          <div class="relative z-0 w-full mb-6 group">
-            <label>Calle:</label>
-            <input
-              type="text"
-              name="calle"
-              value={calle}
-              onChange={handleCalleChange}
-            />
-          </div>
-          <br />
-          <div class="relative z-0 w-full mb-6 group">
-            <label>Número:</label>
-            <input
-              type="text"
-              name="numero"
-              value={numero}
-              onChange={handleNumeroChange}
-            />
-          </div>
-          <br />
+        {user.userType === "profesional" ? (
+          <div>
+            <hr />
+            <h2>Datos de la empresa:</h2>
+            <div class="relative z-0 w-full mb-6 group">
+              <label>País:</label>
+              <input
+                type="text"
+                name="pais"
+                value={pais}
+                onChange={handlePaisChange}
+              />
+            </div>
+            <br />
+            <div class="relative z-0 w-full mb-6 group">
+              <label>Provincia:</label>
+              <input
+                type="text"
+                name="provincia"
+                value={provincia}
+                onChange={handleProvinciaChange}
+              />
+            </div>
+            <br />
+            <div class="relative z-0 w-full mb-6 group">
+              <label>Población:</label>
+              <input
+                type="text"
+                name="poblacion"
+                value={poblacion}
+                onChange={handlePoblacionChange}
+              />
+            </div>
+            <br />
+            <div class="relative z-0 w-full mb-6 group">
+              <label>Calle:</label>
+              <input
+                type="text"
+                name="calle"
+                value={calle}
+                onChange={handleCalleChange}
+              />
+            </div>
+            <br />
+            <div class="relative z-0 w-full mb-6 group">
+              <label>Número:</label>
+              <input
+                type="text"
+                name="numero"
+                value={numero}
+                onChange={handleNumeroChange}
+              />
+            </div>
+            <br />
 
-          <label>Piso:</label>
-          <input
-            type="text"
-            name="piso"
-            value={piso}
-            onChange={handlePisoChange}
-          />
-          <br />
-          <label>CIF:</label>
-          <input
-            type="text"
-            name="cif"
-            value={cif}
-            onChange={handleCifChange}
-          />
-          <br />
-          <label>Razón Social:</label>
-          <input
-            type="text"
-            name="rSocial"
-            value={rSocial}
-            onChange={handleRSocialChange}
-          />
-        </div>
-      ) : (
-        <div></div>
-      )}
+            <label>Piso:</label>
+            <input
+              type="text"
+              name="piso"
+              value={piso}
+              onChange={handlePisoChange}
+            />
+            <br />
+            <label>CIF:</label>
+            <input
+              type="text"
+              name="cif"
+              value={cif}
+              onChange={handleCifChange}
+            />
+            <br />
+            <label>Razón Social:</label>
+            <input
+              type="text"
+              name="rSocial"
+              value={rSocial}
+              onChange={handleRSocialChange}
+            />
+          </div>
+        ) : (
+          <div></div>
+        )}
 
-      {user.userType === "cliente" || user.userType === "profesional" ? (
-        <button onClick={handleSubmit}>Actualizar</button>
-      ) : (
-        <div></div>
-      )}
+        {user.userType === "cliente" || user.userType === "profesional" ? (
+          <button onClick={handleSubmit}>Actualizar</button>
+        ) : (
+          <div></div>
+        )}
+      </div>
     </div>
   );
 }
