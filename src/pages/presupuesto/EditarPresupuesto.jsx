@@ -119,87 +119,103 @@ function EditarPresupuesto() {
   };
 
   return (
-    <div>
+    <div id="container">
       {user.userType === "cliente" && (
-        <div>
-          <label>Fecha:</label>
-          <input
-            type="date"
-            name="fecha"
-            value={fecha}
-            onChange={handleFechaChange}
-          />
+        <div id="contact_form">
+          <div className="fecha">
+            <label>Fecha:</label>
+            <input
+              type="date"
+              name="fecha"
+              value={fecha}
+              onChange={handleFechaChange}
+            />
+          </div>
           <br />
-          <label>Provincia:</label>
-          <input
-            type="text"
-            name="provincia"
-            value={provincia}
-            onChange={handleProvinciaChange}
-          />
+          <div className="numero">
+            <label>Provincia:</label>
+            <input
+              type="text"
+              name="provincia"
+              value={provincia}
+              onChange={handleProvinciaChange}
+            />
+          </div>
           <br />
-          <label>Población:</label>
-          <input
-            type="text"
-            name="poblacion"
-            value={poblacion}
-            onChange={handlePoblacionChange}
-          />
+          <div className="numero">
+            <label>Población:</label>
+            <input
+              type="text"
+              name="poblacion"
+              value={poblacion}
+              onChange={handlePoblacionChange}
+            />
+          </div>
           <br />
-
-          <label>Calle:</label>
-          <input
-            type="text"
-            name="calle"
-            value={calle}
-            onChange={handleCalleChange}
-          />
+          <div className="numero">
+            <label>Calle:</label>
+            <input
+              type="text"
+              name="calle"
+              value={calle}
+              onChange={handleCalleChange}
+            />
+          </div>
           <br />
-
-          <label>Número:</label>
-          <input
-            type="text"
-            name="numero"
-            value={numero}
-            onChange={handleNumeroChange}
-          />
+          <div className="numero">
+            <label>Número:</label>
+            <input
+              type="text"
+              name="numero"
+              value={numero}
+              onChange={handleNumeroChange}
+            />
+          </div>
           <br />
-
-          <label>Piso:</label>
-          <input
-            type="text"
-            name="piso"
-            value={piso}
-            onChange={handlePisoChange}
-          />
+          <div className="numero">
+            <label>Piso:</label>
+            <input
+              type="text"
+              name="piso"
+              value={piso}
+              onChange={handlePisoChange}
+            />
+          </div>
           <br />
-
-          <label>Observaciones:</label>
-          <input
-            type="text"
-            name="observaciones"
-            value={observaciones}
-            onChange={handleObservacionesChange}
-          />
+          <div className="observaciones">
+            <label>Observaciones:</label>
+            <input
+              type="text"
+              name="observaciones"
+              value={observaciones}
+              onChange={handleObservacionesChange}
+            />
+          </div>
           <br />
-
-          <label>Numero de empleados:</label>
-          <input
-            type="text"
-            name="numEmpleados"
-            value={numEmpleados}
-            onChange={handleNumEmpleadosChange}
-          />
+          <div className="input">
+            <label>Numero de empleados:</label>
+            <input
+              type="text"
+              name="numEmpleados"
+              value={numEmpleados}
+              onChange={handleNumEmpleadosChange}
+            />
+          </div>
           <br />
-
-          <label>Metros cuadrados:</label>
-          <input
-            type="text"
-            name="metro2"
-            value={metro2}
-            onChange={handleMetro2Change}
-          />
-          <button onClick={handleEditarPresupuesto}>Editar Presupuesto</button>
+          <div className="input">
+            <label>Metros cuadrados:</label>
+            <input
+              type="text"
+              name="metro2"
+              value={metro2}
+              onChange={handleMetro2Change}
+            />
+          </div>
+          <div>
+            <button id="form_button" onClick={handleEditarPresupuesto}>
+              Editar Presupuesto
+            </button>
+          </div>
         </div>
       )}
       <br />
@@ -232,9 +248,11 @@ function EditarPresupuesto() {
             onChange={handlePrecioChange}
           />
           <br />
-          <button onClick={handleEditarPresupuesto}>
-            Enviar Presupuesto a {nombreUsuario.username}
-          </button>
+          <div id="form_button">
+            <button onClick={handleEditarPresupuesto}>
+              Enviar Presupuesto a {nombreUsuario.username}
+            </button>
+          </div>
         </div>
       )}
 
