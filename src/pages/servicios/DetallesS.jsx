@@ -42,16 +42,20 @@ function DetallesS() {
   }
 
   return (
-    <div>
-      <h2>{detalles.nombre}</h2>
+    <div id="container">
+
+<h1>&bull; {detalles.nombre} &bull;</h1>
+
+     
       <img src={detalles.img} alt="" />
       <br />
-      <small>{detalles.breveDesc}</small>
+
+      <h2>{detalles.breveDesc}</h2>
       <p>{detalles.descripcion}</p>
       <p>{detalles.utilidades}</p>
       {user.userType === "cliente" && (
         <Link to={`/presupuestos/crear/${id}`}>
-          <button>Pedir presupuesto</button>
+          <button id="form_button">Pedir presupuesto</button>
         </Link>
       )}
 
@@ -61,7 +65,7 @@ function DetallesS() {
             <button>Editar Servicio</button>
           </Link>
 
-          <button onClick={handleDelete}>Borrar el servicio</button>
+          <button id="form_button" onClick={handleDelete}>Borrar el servicio</button>
         </div>
       )}
     </div>

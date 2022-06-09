@@ -24,17 +24,23 @@ function Profile() {
   }
 
   return (
-    <div>
-      <br />
+    <div id="container">
+      
+    <div id="contact_form">
 
-      <br />
-      <h1>PERFIL</h1>
+    <h1>&bull; <h1>PERFIL</h1> &bull;</h1>
+      
       <br />
       <p> {actualPerfil.username}</p>
       <p> {actualPerfil.email}</p>
       <br />
-
+    </div>
+      
+      
+      <div id="form_button">
       <Link to={"/editarPerfil"}>Editar Perfil</Link>
+      </div>
+      
     </div>
   );
 }

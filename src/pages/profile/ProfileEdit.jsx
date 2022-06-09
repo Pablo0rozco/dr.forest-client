@@ -48,8 +48,9 @@ function ProfileEdit() {
   }
 
   return (
+    <div id="container">
     <div>
-      <label>Nombre de usuario:</label>
+        <label>Nombre de usuario:</label>
       <input
         type="text"
         name="username"
@@ -64,6 +65,8 @@ function ProfileEdit() {
         value={email}
         onChange={handleEmailChange}
       />
+    </div>
+    
 
       {/* <label htmlFor="image">Imagen</label>
         <input type="file" name="img" onChange={handleImgChange} /> */}
