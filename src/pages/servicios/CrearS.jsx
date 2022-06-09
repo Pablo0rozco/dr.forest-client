@@ -48,7 +48,13 @@ function CrearS() {
   };
 
   return (
-    <div>
+    <div id="container">
+
+<h1>&bull; Crea un servicio &bull;</h1>
+
+    <div id="contact_form">
+
+    <div className="numero">
       <label>Imagen:</label>
       <input
         type="text"
@@ -57,8 +63,11 @@ function CrearS() {
         onChange={handleFormChange}
       />
       <br />
+    </div>
+      
 
-      <label>Nombre:</label>
+      <div className="numero">
+        <label>Nombre:</label>
       <input
         type="text"
         name="nombre"
@@ -66,7 +75,11 @@ function CrearS() {
         onChange={handleFormChange}
       />
       <br />
-      <label>Descripción breve:</label>
+      </div>
+
+      
+      <div className="numero">
+        <label>Descripción breve:</label>
       <input
         type="text"
         name="breveDesc"
@@ -74,15 +87,11 @@ function CrearS() {
         onChange={handleFormChange}
       />
       <br />
-      <label>Descripción:</label>
-      <input
-        type="text"
-        name="descripcion"
-        value={form.descripcion}
-        onChange={handleFormChange}
-      />
-      <br />
-      <label>Utilidades:</label>
+      </div>
+
+      
+      <div className="numero">
+        <label>Utilidades:</label>
       <input
         type="text"
         name="utilidades"
@@ -90,10 +99,27 @@ function CrearS() {
         onChange={handleFormChange}
       />
       <br />
+      </div>
 
-      <button onClick={handleAñadirServicio}>Añadir Servicio</button>
+      <div className="observaciones">
+                <label for="observaciones">Descripción:</label>
+                <textarea name="descripcion" value={form.descripcion}
+        onChange={handleFormChange} placeholder="Describe el servicio de manera completa" id="message_input" cols="30" rows="5" required></textarea>
+              </div>    
+
+
+      
+              <div id="form_button">
+                <button onClick={handleAñadirServicio} type="boton" value="Solicitar Presupuesto">Añadir Servicio</button>
+              </div>
+      
+      
+      
+      
 
       {errorMessage !== null && <p>{errorMessage}</p>}
+    </div>
+      
     </div>
   );
 }
