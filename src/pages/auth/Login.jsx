@@ -44,60 +44,50 @@ function Login() {
   };
 
   return (
-    <div className="p-4 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-green-800 dark:border-gray-700">
-      <h5 class="text-xl font-800 text-gray-900 dark:text-white">
-        Accede a Dr.Forest
-      </h5>
-      <br />
-      <form
-        className="p-4 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700"
-        onSubmit={handleLogin}
-      >
-        <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-          Email:
-        </label>
-        <input
-          type="email"
-          name="email"
-          value={email}
-          onChange={handleEmailChange}
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-          placeholder="name@dr-forest.com"
-        />
+    <div className="login-container">
+      <div className="card-container-login">
+        <h5 class="">Accede a Dr.Forest</h5>
         <br />
+        <form className="" onSubmit={handleLogin}>
+          <label>Email:</label>
+          <input
+            className="bg-transparent text-color white"
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleEmailChange}
+            placeholder="name@dr-forest.com"
+            id
+          />
+          <br />
 
-        <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-          Contraseña:
-        </label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePasswordChange}
-          placeholder="••••••••"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-        />
+          <label>Contraseña:</label>
+          <br />
 
-        <br />
+          <input
+            className="bg-transparent"
+            type="password"
+            name="password"
+            value={password}
+            onChange={handlePasswordChange}
+            placeholder="••••••••"
+          />
 
-        {errorMessage !== null && <p>{errorMessage}</p>}
-        <br />
-        <button
-          type="submit"
-          class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        >
-          Acceder
-        </button>
-      </form>
+          <br />
 
-      <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-        ¿No estas registrado?{" "}
-        <Link
-          to={"/signup"}
-          className="text-blue-700 hover:underline dark:text-blue-500"
-        >
-          Regístrate
-        </Link>
+          {errorMessage !== null && <p>{errorMessage}</p>}
+          <br />
+          <button type="submit">Acceder</button>
+        </form>
+
+        <div id="link-login">
+          ¿No estas registrado?{" "}
+          <Link className="" to={"/signup"}>
+            <span id="bold">
+              <b>Regístrate</b>
+            </span>
+          </Link>
+        </div>
       </div>
     </div>
   );

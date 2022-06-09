@@ -140,6 +140,7 @@ function ProfileEdit() {
           <div>
             <hr />
             <h2>Datos de la empresa:</h2>
+            <br />
             <div class="relative z-0 w-full mb-6 group">
               <label>País:</label>
               <input

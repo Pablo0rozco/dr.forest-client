@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Roboto:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,700;1,400&family=Roboto:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,700;1,400&family=Roboto:wght@300&display=swap");
 
 .App {
   text-align: center;
@@ -106,7 +106,7 @@
 
 /*! -------------Navbar----------------- */
 .navbar-conainer {
-  background-image: url("./assets/navbar-bg3.jpg");
+  background-image: url("./assets/login-bg.webp");
   height: 80px;
   display: flex;
   flex-direction: row;
@@ -159,6 +159,51 @@
   font-weight: bolder;
   font-size: medium;
 }
+/*! ------------- Login ----------------- */
+.card-container-login {
+  border: 2px solid black;
+  border-radius: 100px;
+  width: 85%;
+  background-image: url("./assets/login-bg.webp");
+  color: white;
+  box-shadow: 15px 5px 5px #b6c2b9;
+
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  align-content: space-around;
+  width: 30%;
+}
+
+.card-container-login h5 {
+  font-size: 50px;
+  margin-top: 10%;
+  font-style: italic;
+  font-weight: bolder;
+  color: white;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  margin-top: 5%;
+}
+
+.card-container-login ::placeholder {
+  color: antiquewhite;
+}
+
+#link-login {
+  margin-bottom: 15%;
+}
+
+#bold:hover {
+  font-weight: 900;
+  font-size: 20px;
+}
 /*! -------------JOsu cierre----------------- */
 
 /*PRINCIPIO APP CSS DE PABLO */
@@ -170,7 +215,7 @@
 }
 .slogan-app {
   font-family: Arvo;
-  font-style:italic;
+  font-style: italic;
 }
 
 #container {

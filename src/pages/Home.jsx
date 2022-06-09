@@ -31,7 +31,6 @@ function Home() {
 
       {/* <p>En Dr. Forest nos tomamos muy en serio el cuidado de nuestro medio ambiente. Aquí podrás encontrar una gran cantidad de servicios relacionados con la naturaleza gracias a nuestra red nacional de profesionales cualificados</p> */}
 
-      <h2></h2>
       <div className="card-container">
         {allServices.map((eachService) => {
           return (
