@@ -129,7 +129,7 @@ function Presupuestos() {
             
               <div className="fecha">
                 <label for="fecha">Fecha </label>
-                <input type="date" value={form.fecha} name="fecha" onChange={handlePreFormChange} id="fecha_input" required/>
+                <input type="date"  value={form.fecha} name="fecha" onChange={handlePreFormChange} id="fecha_input" required/>
               </div>
 
 
@@ -157,14 +157,14 @@ function Presupuestos() {
 
               <div className="numero">
                 <label for="calle"></label>
-                <input type="text" value={form.calle} onChange={handlePreFormChange} placeholder="Calle" name="calle" id="calle_input" required/>
+                <input className="placeholder:text-black" type="text" value={form.calle} onChange={handlePreFormChange} placeholder="Calle" name="calle" id="calle_input" required/>
               </div>
 
 
               {/* NUMERO */}
               <div className="numero">
                 <label for="numero">Número </label>
-                <input type="number" value={form.numero} onChange={handlePreFormChange} name="numero" id="numero_input" required/>
+                <input className="placeholder:text-black" type="number" value={form.numero} onChange={handlePreFormChange} name="numero" id="numero_input" required/>
               </div>
 
 
@@ -172,14 +172,14 @@ function Presupuestos() {
 
               <div className="numero">
                 <label for="piso"></label>
-                <input type="text" value={form.piso} onChange={handlePreFormChange} placeholder="Piso" name="piso" id="piso_input" required/>
+                <input className="placeholder:text-black" type="text" value={form.piso} onChange={handlePreFormChange} placeholder="Piso" name="piso" id="piso_input" required/>
               </div>
               
 
               {/* OBSERVACIONES */}
               <div className="observaciones">
                 <label for="observaciones"></label>
-                <textarea name="observaciones" placeholder="Comental al profesional cualquier información que consideres importante" id="message_input" cols="30" rows="5" required></textarea>
+                <textarea className="placeholder:text-black" name="observaciones" placeholder="Comental al profesional cualquier información que consideres importante" id="message_input" cols="30" rows="5" required></textarea>
               </div>
 
 
@@ -187,7 +187,7 @@ function Presupuestos() {
 
               <div className="input">
                 <label for="number">Número Empleados </label>
-                <input type="number" placeholder="Número de Empleados" value={form.numEmpleados} onChange={handlePreFormChange} name="numEmpleados" id="numEmpleados_input" required/>
+                <input className="placeholder:text-black" type="number" placeholder="Número de Empleados" value={form.numEmpleados} onChange={handlePreFormChange} name="numEmpleados" id="numEmpleados_input" required/>
               </div>
 
                   <br />
@@ -195,7 +195,7 @@ function Presupuestos() {
               {/* METROS CUADRADOS */}
               <div className="input">
                 <label for="number">Metros Cuadrados </label>
-                <input type="number" placeholder="Metros cuadrados" value={form.metro2} onChange={handlePreFormChange} name="metro2"  required/>
+                <input className="placeholder:text-black" type="number" placeholder="Metros cuadrados" value={form.metro2} onChange={handlePreFormChange} name="metro2"  required/>
               </div>
 
               

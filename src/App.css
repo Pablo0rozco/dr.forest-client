@@ -9,7 +9,10 @@
   background-position: center;
   background-size: contain;
 
-  min-width: 100vw;
+  min-height: 100vh;
+}
+#root {
+  height: 100%;
 }
 
 .App-header {
@@ -137,6 +140,25 @@
   text-shadow: #282c34;
 }
 
+/*! ------------- tabla----------------- */
+
+#table {
+  width: 80%;
+  border: 1px solid black;
+  padding: 40%;
+}
+
+#table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: space-around;
+}
+
+#table-button:hover {
+  font-weight: bolder;
+  font-size: medium;
+}
 /*! -------------JOsu cierre----------------- */
 
 /*PRINCIPIO APP CSS DE PABLO */
@@ -167,7 +189,6 @@ form {
 .name {
   float: left;
   width: 45%;
-  
 }
 
 h1 {
@@ -211,7 +232,7 @@ textarea {
   background: none;
   border: none;
   border-bottom: solid 2px #474544;
-  color: #474544;
+  color: #000000;
   font-size: 1em;
   font-weight: 400;
   letter-spacing: 1px;
@@ -223,12 +244,6 @@ textarea {
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
 }
 
 input[type="text"]:focus,
@@ -282,25 +297,29 @@ textarea {
   line-height: 150%;
   height: 150px;
   resize: none;
-  width: 100%;
+  width: 80%;
+  /* Cambia el color del placeholder de text area */
+  color: rgb(0, 0, 0);
+  border: 1px solid black;
 }
 
 ::-webkit-input-placeholder {
-  color: #474544;
+  color: #000000;
+  color: white;
 }
 
 :-moz-placeholder {
-  color: #474544;
+  color: #000000;
   opacity: 1;
 }
 
 ::-moz-placeholder {
-  color: #474544;
+  color: #000000;
   opacity: 1;
 }
 
 :-ms-input-placeholder {
-  color: #474544;
+  color: #000000;
 }
 .input {
   justify-content: center;

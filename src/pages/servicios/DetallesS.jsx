@@ -12,7 +12,7 @@ function DetallesS() {
   const [detalles, setDetalles] = useState(null);
   const navigate = useNavigate();
   const { id } = useParams();
-  const { user } = useContext(AuthContext);
+  const { isCliente, isProfesional } = useContext(AuthContext);
 
   useEffect(() => {
     getDetails();
@@ -43,29 +43,29 @@ function DetallesS() {
 
   return (
     <div id="container">
+      <h1>&bull; {detalles.nombre} &bull;</h1>
 
-<h1>&bull; {detalles.nombre} &bull;</h1>
-
-     
       <img src={detalles.img} alt="" />
       <br />
 
       <h2>{detalles.breveDesc}</h2>
       <p>{detalles.descripcion}</p>
       <p>{detalles.utilidades}</p>
-      {user.userType === "cliente" && (
+      {isCliente && (
         <Link to={`/presupuestos/crear/${id}`}>
           <button id="form_button">Pedir presupuesto</button>
         </Link>
       )}
 
-      {user.userType === "profesional" && (
+      {isProfesional && (
         <div>
           <Link to={`/servicios/${id}/editar`}>
             <button id="form_button">Editar Servicio</button>
           </Link>
 
-          <button id="form_button" onClick={handleDelete}>Borrar el servicio</button>
+          <button id="form_button" onClick={handleDelete}>
+            Borrar el servicio
+          </button>
         </div>
       )}
     </div>

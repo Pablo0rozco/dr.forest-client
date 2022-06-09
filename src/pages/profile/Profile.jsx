@@ -7,6 +7,8 @@ function Profile() {
   const { user } = useContext(AuthContext);
   const [actualPerfil, setActualPerfil] = useState(null);
 
+  console.log(user.userType);
+
   console.log("estoooo", actualPerfil);
 
   useEffect(() => {
@@ -31,8 +33,27 @@ function Profile() {
     <h1>&bull; <h1>PERFIL</h1> &bull;</h1>
       
       <br />
-      <p> {actualPerfil.username}</p>
-      <p> {actualPerfil.email}</p>
+      <div>
+        <p> {actualPerfil.username}</p>
+        <p> {actualPerfil.email}</p>
+        <p> {actualPerfil.telf}</p>
+        <p> {actualPerfil.cp}</p>
+      </div>
+
+      {user.userType === "profesional" && (
+        <div>
+          <p> {actualPerfil.pais}</p>
+          <p> {actualPerfil.provincia}</p>
+          <p> {actualPerfil.poblacion}</p>
+          <p> {actualPerfil.calle}</p>
+          <p> {actualPerfil.numero}</p>
+          <p> {actualPerfil.piso}</p>
+          <p> {actualPerfil.username}</p>
+          <p> {actualPerfil.cif}</p>
+          <p> {actualPerfil.rSocial}</p>
+        </div>
+      )}
+
       <br />
     </div>
       

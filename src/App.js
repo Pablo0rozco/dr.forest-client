@@ -59,7 +59,11 @@ function App() {
         />
         <Route
           path="/presupuestos/:id/detalles"
-          element={<DetallesPresupuesto />}
+          element={
+            <IsPrivate>
+              <DetallesPresupuesto />
+            </IsPrivate>
+          }
         />
         <Route
           path="/presupuestos/editar/:id"
@@ -69,18 +73,37 @@ function App() {
             </IsPrivate>
           }
         />
-        <Route path="/presupuestos/crear/:id" element={<Presupuestos />} />
+        <Route
+          path="/presupuestos/crear/:id"
+          element={
+            <IsPrivate>
+              <Presupuestos />
+            </IsPrivate>
+          }
+        />
         <Route
           path="/presupuestos/:id/detalles"
-          element={<DetallesPresupuesto />}
+          element={
+            <IsPrivate>
+              <DetallesPresupuesto />
+            </IsPrivate>
+          }
         />
         <Route
           path="/presupuestos/editar/:id"
-          element={<EditarPresupuesto />}
+          element={
+            <IsPrivate>
+              <EditarPresupuesto />
+            </IsPrivate>
+          }
         />
         <Route
           path="/presupuestos/empresa"
-          element={<ListarPresupuestosProfesional />}
+          element={
+            <IsPrivate>
+              <ListarPresupuestosProfesional />
+            </IsPrivate>
+          }
         />
 
         {/* RUTAS DE PERFIL */}
