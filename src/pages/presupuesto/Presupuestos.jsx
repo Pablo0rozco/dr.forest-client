@@ -50,7 +50,7 @@ function Presupuestos() {
 
       console.log(response);
 
-      navigate("/crear/:id");
+      navigate("/presupuestos");
     } catch (error) {
       console.log(error);
       navigate("/error");
@@ -112,7 +112,6 @@ function Presupuestos() {
 
   return (
     <div className="container-presupuesto">
-      
       <label>Fecha:</label>
       <input
         type="date"
@@ -120,7 +119,7 @@ function Presupuestos() {
         value={form.fecha}
         onChange={handlePreFormChange}
       />
-      
+
       <label>Provincia:</label>
       <select
         type="text"
@@ -133,7 +132,6 @@ function Presupuestos() {
         })}
       </select>
 
-      
       <label>Población:</label>
       <input
         type="text"
@@ -141,7 +139,7 @@ function Presupuestos() {
         value={form.poblacion}
         onChange={handlePreFormChange}
       />
-      
+
       <label>Calle:</label>
       <input
         type="text"
@@ -149,7 +147,7 @@ function Presupuestos() {
         value={form.calle}
         onChange={handlePreFormChange}
       />
-      
+
       <label>Numero:</label>
       <input
         type="number"
@@ -157,7 +155,7 @@ function Presupuestos() {
         value={form.numero}
         onChange={handlePreFormChange}
       />
-      
+
       <label>Piso:</label>
       <input
         type="text"
@@ -165,7 +163,7 @@ function Presupuestos() {
         value={form.piso}
         onChange={handlePreFormChange}
       />
-      
+
       <label>Observaciones:</label>
       <input
         type="text"
@@ -173,7 +171,7 @@ function Presupuestos() {
         value={form.observaciones}
         onChange={handlePreFormChange}
       />
-      
+
       <label>Numero de Empleados:</label>
       <input
         type="number"
@@ -181,7 +179,7 @@ function Presupuestos() {
         value={form.numEmpleados}
         onChange={handlePreFormChange}
       />
-      
+
       <label>Metros cuadrados:</label>
       <input
         type="number"
@@ -190,7 +188,6 @@ function Presupuestos() {
         onChange={handlePreFormChange}
       />
 
-      
       <button onClick={handleAddPresupuesto}>Solicitar Presupuesto</button>
     </div>
   );
