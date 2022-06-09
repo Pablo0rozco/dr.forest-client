@@ -71,7 +71,7 @@ function ProfileEdit() {
       {/* <label htmlFor="image">Imagen</label>
         <input type="file" name="img" onChange={handleImgChange} /> */}
 
-      <button onClick={handleSubmit}>Actualizar</button>
+      <button id="form_button" onClick={handleSubmit}>Actualizar</button>
 
       {/* <img src={img} alt="profile-pic" width={100}/> */}
     </div>

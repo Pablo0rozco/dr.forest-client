@@ -62,7 +62,7 @@ function DetallesS() {
       {user.userType === "profesional" && (
         <div>
           <Link to={`/servicios/${id}/editar`}>
-            <button>Editar Servicio</button>
+            <button id="form_button">Editar Servicio</button>
           </Link>
 
           <button id="form_button" onClick={handleDelete}>Borrar el servicio</button>

@@ -25,10 +25,13 @@ function Home() {
   }
   return (
     <div className="home-container">
-      <h1>Bienvenidos a Dr.Forest</h1>
-      <p></p>
+      <h1 className="nombre-app">DR. FOREST</h1>
 
-      <h2>Servicios:</h2>
+      <h2 className="slogan-app">El bosque de soluciones ambientales</h2>
+
+      {/* <p>En Dr. Forest nos tomamos muy en serio el cuidado de nuestro medio ambiente. Aquí podrás encontrar una gran cantidad de servicios relacionados con la naturaleza gracias a nuestra red nacional de profesionales cualificados</p> */}
+
+      <h2></h2>
       <div className="card-container">
         {allServices.map((eachService) => {
           return (

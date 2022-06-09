@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,700;1,400&family=Roboto:wght@300&display=swap');
 
 .App {
   text-align: center;
@@ -138,6 +140,16 @@
 /*! -------------JOsu cierre----------------- */
 
 /*PRINCIPIO APP CSS DE PABLO */
+
+.nombre-app {
+  font-family: Arvo, sans-serif;
+  font-size: 80px;
+  color: black;
+}
+.slogan-app {
+  font-family: Arvo;
+  font-style:italic;
+}
 
 #container {
   border: solid 3px #474544;

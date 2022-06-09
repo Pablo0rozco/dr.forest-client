@@ -63,7 +63,8 @@ function EditarS() {
   };
 
   return (
-    <div id="container-presupuesto">
+    <div id="container">
+
       <div className="contact_form">
         <label>Imagen:</label>
       <input type="text" name="img" value={img} onChange={handleImgChange} />
@@ -82,23 +83,30 @@ function EditarS() {
       </div>
 
      
-      <br />
-      <label>Descripción breve:</label>
-      <input
-        type="text"
-        name="breveDesc"
-        value={breveDesc}
-        onChange={handleBreveDescChange}
-      />
-      <br />
-      <label>Descripción:</label>
+      
+      <div className="name">
+        <label>Descripción breve:</label>
+              <input
+                type="text"
+                name="breveDesc"
+                value={breveDesc}
+                onChange={handleBreveDescChange}
+              />
+      </div>
+      
+      
+      <div className="observaciones">
+        <label>Descripción:</label>
       <input
         type="text"
         name="descripcion"
         value={descripcion}
         onChange={handleDescripcionChange}
       />
-      <br />
+      </div>
+
+      
+     
       <label>Utilidades:</label>
       <input
         type="text"
@@ -107,7 +115,8 @@ function EditarS() {
         onChange={handleUtilidadesChange}
       />
       <br />
-      <button onClick={handleEditarServicio}>Añadir Servicio</button>
+      <div id="form_button"><button onClick={handleEditarServicio}>Guardar Cambios</button></div>
+      
 
       {errorMessage !== null && <p>{errorMessage}</p>}
     </div>

@@ -149,7 +149,7 @@ function Presupuestos() {
               {/* POBLACION */}
               <div className="numero">
                 <label for="poblacion"></label>
-                <input type="text" placeholder="Población" name="poblacion" id="poblacion_input" required value={form.poblacion}
+                <input className="placeholder:text-black" type="text" placeholder="Población" name="poblacion" id="poblacion_input" required value={form.poblacion}
                   onChange={handlePreFormChange} />
               </div>
 

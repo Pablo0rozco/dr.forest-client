@@ -23,25 +23,30 @@ function AuthWrapper(props) {
       setIsLoggedIn(true);
       setUser(response.data);
 
-      setIsLoadingUser(false);
+      
       // return setIsLoggedIn(true)
       //! Setea si el usuario es cliente o profesional
 
       console.log(response.data);
       if (response.data.userType === "cliente") {
         setIsCliente(true);
+        setProfesional(false)
       } else if (response.data.userType === "profesional") {
         setProfesional(true);
+        setIsCliente(false)
       } else {
         setProfesional(false);
         setIsCliente(false);
       }
+      setIsLoadingUser(false);
       return response.data;
     } catch (error) {
       console.log("El usuario no tiene token o el token no es valido");
       setIsLoggedIn(false);
       setUser(null);
       setIsLoadingUser(false);
+      setProfesional(false);
+      setIsCliente(false);
     }
   };
   console.log("Es un cliente=" + isCliente);
