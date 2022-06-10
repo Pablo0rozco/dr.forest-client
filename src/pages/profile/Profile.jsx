@@ -26,22 +26,26 @@ function Profile() {
   }
 
   return (
-    <div id="container h-[100%] ">
-      <div id="contact_form">
+    <div id="container">
+      <div id="container-perfil">
+<div id="contact_form">
         <h1>
           &bull; <h1>PERFIL</h1> &bull;
         </h1>
 
         <br />
-        <div>
-          <p> {actualPerfil.username}</p>
-          <p> {actualPerfil.email}</p>
-          <p> {actualPerfil.telf}</p>
-          <p> {actualPerfil.cp}</p>
+        <div className="perfil-detail">
+        <table>
+          <p>Nombre de usuario: {actualPerfil.username}</p>
+          <p>Email: {actualPerfil.email}</p>
+          <p>Teléfono: {actualPerfil.telf}</p>
+          <p>Código Postal: {actualPerfil.cp}</p>
+        </table>
+          
         </div>
 
         {user.userType === "profesional" && (
-          <div>
+          <div className="perfil-detail">
             <p> {actualPerfil.pais}</p>
             <p> {actualPerfil.provincia}</p>
             <p> {actualPerfil.poblacion}</p>
@@ -60,6 +64,8 @@ function Profile() {
       <div id="form_button">
         <Link to={"/editarPerfil"}>Editar Perfil</Link>
       </div>
+      </div>
+      
     </div>
   );
 }

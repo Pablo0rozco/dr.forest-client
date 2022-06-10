@@ -87,11 +87,12 @@ function ProfileEdit() {
   }
 
   return (
-    <div id="container h-[100%] ">
-      <div>
+    <div id="container">
+      <div id="container-perfil">
+      <div className="perfil-detail">
         {user.userType === "cliente" || user.userType === "profesional" ? (
           <div>
-            <div class="relative z-0 w-full mb-6 group">
+            <div className="editar-perfil">
               <label>Nombre de usuario:</label>
               <input
                 type="text"
@@ -101,7 +102,7 @@ function ProfileEdit() {
               />
             </div>
             <br />
-            <div class="relative z-0 w-full mb-6 group">
+            <div class="edita">
               <label>Email:</label>
               <input
                 type="email"
@@ -112,7 +113,7 @@ function ProfileEdit() {
             </div>
 
             <br />
-            <div class="relative z-0 w-full mb-6 group">
+            <div class="edita">
               <label>Teléfono:</label>
               <input
                 type="tel"
@@ -122,7 +123,7 @@ function ProfileEdit() {
               />
             </div>
             <br />
-            <div class="relative z-0 w-full mb-6 group">
+            <div class="edita">
               <label>Código Postal:</label>
               <input
                 type="text"
@@ -141,7 +142,7 @@ function ProfileEdit() {
             <hr />
             <h2>Datos de la empresa:</h2>
             <br />
-            <div class="relative z-0 w-full mb-6 group">
+            <div class="edita">
               <label>País:</label>
               <input
                 type="text"
@@ -151,7 +152,7 @@ function ProfileEdit() {
               />
             </div>
             <br />
-            <div class="relative z-0 w-full mb-6 group">
+            <div class="edita">
               <label>Provincia:</label>
               <input
                 type="text"
@@ -161,7 +162,7 @@ function ProfileEdit() {
               />
             </div>
             <br />
-            <div class="relative z-0 w-full mb-6 group">
+            <div class="edita">
               <label>Población:</label>
               <input
                 type="text"
@@ -171,7 +172,7 @@ function ProfileEdit() {
               />
             </div>
             <br />
-            <div class="relative z-0 w-full mb-6 group">
+            <div class="edita">
               <label>Calle:</label>
               <input
                 type="text"
@@ -181,7 +182,7 @@ function ProfileEdit() {
               />
             </div>
             <br />
-            <div class="relative z-0 w-full mb-6 group">
+            <div class="edita">
               <label>Número:</label>
               <input
                 type="text"
@@ -221,10 +222,15 @@ function ProfileEdit() {
         )}
 
         {user.userType === "cliente" || user.userType === "profesional" ? (
-          <button onClick={handleSubmit}>Actualizar</button>
+          <div id="form_button">
+            <button onClick={handleSubmit}>Actualizar</button>
+          </div>
+          
         ) : (
           <div></div>
         )}
+      </div>
+        
       </div>
     </div>
   );
