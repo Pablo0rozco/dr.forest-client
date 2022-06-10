@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { listarServiciosService } from "../services/servicios.sevices";
 import { Link } from "react-router-dom";
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 function Home() {
   const [allServices, setAllServices] = useState(null);
@@ -21,7 +22,19 @@ function Home() {
     }
   };
   if (allServices === null) {
-    return <h3>..loaidng</h3>;
+    return (
+      <div>
+        <br />
+        <br />
+        <h2>Conectando con el servidor</h2>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <PacmanLoader />
+      </div>
+    );
   }
   return (
     <div className="h-[100%] ">

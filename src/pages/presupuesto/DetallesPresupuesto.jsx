@@ -5,6 +5,7 @@ import {
   borrarPresupuestoService,
 } from "../../services/presupuestos.services.js";
 import { useParams, useNavigate, Link } from "react-router-dom";
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 function DetallesPresupuesto() {
   const { id } = useParams();
@@ -33,7 +34,19 @@ function DetallesPresupuesto() {
   };
 
   if (presupuestoDetalles === null) {
-    return <h3>...Cargando</h3>;
+    return (
+      <div>
+        <br />
+        <br />
+        <h2>Conectando con el servidor</h2>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <PacmanLoader />
+      </div>
+    );
   }
 
   return (

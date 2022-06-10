@@ -6,6 +6,7 @@ import {
   editarPerfilService,
   profileService,
 } from "../../services/editProfile.services";
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 function ProfileEdit() {
   const { user, setUser, authenticateUser } = useContext(AuthContext);
@@ -82,8 +83,34 @@ function ProfileEdit() {
     setRSocial(response.data.rSocial);
   };
 
-  if (!user) {
-    return <h3>...Loading</h3>;
+  if (
+    username === null ||
+    email === null ||
+    telf === null ||
+    cp === null ||
+    pais === null ||
+    provincia === null ||
+    poblacion === null ||
+    poblacion === null ||
+    calle === null ||
+    numero === null ||
+    piso === null ||
+    cif === null ||
+    rSocial === null
+  ) {
+    return (
+      <div>
+        <br />
+        <br />
+        <h2>Conectando con el servidor</h2>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <PacmanLoader />
+      </div>
+    );
   }
 
   return (

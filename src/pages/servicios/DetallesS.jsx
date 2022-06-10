@@ -7,6 +7,7 @@ import {
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
 import { listaProfesionalesService } from "../../services/auth.services";
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 function DetallesS() {
   const [detalles, setDetalles] = useState(null);
@@ -38,7 +39,19 @@ function DetallesS() {
   };
 
   if (detalles === null) {
-    return <h3>...Loading</h3>;
+    return (
+      <div>
+        <br />
+        <br />
+        <h2>Conectando con el servidor</h2>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <PacmanLoader />
+      </div>
+    );
   }
 
   return (

@@ -6,22 +6,20 @@ import {
   EditarPresupuestoService,
   borrarPresupuestoService,
 } from "../../services/presupuestos.services.js";
-
+import PacmanLoader from "react-spinners/PacmanLoader";
 function EditarPresupuesto() {
-  const [fecha, setFecha] = useState("");
-
-  const [provincia, setProvincia] = useState("");
-  const [poblacion, setPoblacion] = useState("");
+  const [fecha, setFecha] = useState(null);
+  const [provincia, setProvincia] = useState(null);
+  const [poblacion, setPoblacion] = useState(null);
   const [calle, setCalle] = useState(null);
-
-  const [numero, setNumero] = useState("");
-  const [piso, setPiso] = useState("");
-  const [observaciones, setObservaciones] = useState("");
-  const [numEmpleados, setNumEmpleados] = useState("");
-  const [metro2, setMetro2] = useState("");
+  const [numero, setNumero] = useState(null);
+  const [piso, setPiso] = useState(null);
+  const [observaciones, setObservaciones] = useState(null);
+  const [numEmpleados, setNumEmpleados] = useState(null);
+  const [metro2, setMetro2] = useState(null);
   const [estado, setEstado] = useState(null);
-  const [precio, setPrecio] = useState(0);
-  const [nombreUsuario, setNombreUsuario] = useState("");
+  const [precio, setPrecio] = useState(null);
+  const [nombreUsuario, setNombreUsuario] = useState(null);
 
   const { id } = useParams();
 
@@ -117,6 +115,34 @@ function EditarPresupuesto() {
       navigate("/error");
     }
   };
+
+  if (
+    fecha === null ||
+    provincia === null ||
+    poblacion === null ||
+    calle === null ||
+    numero === null ||
+    piso === null ||
+    observaciones === null ||
+    numEmpleados === null ||
+    metro2 === null ||
+    precio === null ||
+    estado === null
+  ) {
+    return (
+      <div>
+        <br />
+        <br />
+        <h2>Conectando con el servidor</h2>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <PacmanLoader />
+      </div>
+    );
+  }
 
   return (
     <div id="container">

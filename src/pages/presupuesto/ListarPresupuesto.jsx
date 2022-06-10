@@ -3,8 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { listarPresupuestosService } from "../../services/presupuestos.services";
 import { AuthContext } from "../../context/auth.context";
 import { Link } from "react-router-dom";
+import PacmanLoader from "react-spinners/PacmanLoader";
+
 function ListarPresupuesto() {
-  const [presupuestoList, setPresupuestoList] = useState([]);
+  const [presupuestoList, setPresupuestoList] = useState(null);
   const { user } = useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -23,6 +25,21 @@ function ListarPresupuesto() {
     }
   };
   console.log(presupuestoList);
+  if (presupuestoList === null) {
+    return (
+      <div>
+        <br />
+        <br />
+        <h2>Conectando con el servidor</h2>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <PacmanLoader />
+      </div>
+    );
+  }
 
   return (
     <div className="h-[100%] ">

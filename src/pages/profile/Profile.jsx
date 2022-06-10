@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
 import { profileService } from "../../services/editProfile.services";
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 function Profile() {
   const { user } = useContext(AuthContext);
@@ -22,7 +23,19 @@ function Profile() {
   };
 
   if (!actualPerfil) {
-    return <h3>Loading</h3>;
+    return (
+      <div>
+        <br />
+        <br />
+        <h2>Conectando con el servidor</h2>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <PacmanLoader />
+      </div>
+    );
   }
 
   return (

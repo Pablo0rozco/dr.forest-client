@@ -4,6 +4,7 @@ import {
   detallesServicioService,
   editarServicioService,
 } from "../../services/servicios.sevices";
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 function EditarS() {
   const [img, setImg] = useState("");
@@ -61,6 +62,28 @@ function EditarS() {
       navigate("/error");
     }
   };
+
+  if (
+    img === null ||
+    nombre === null ||
+    breveDesc === null ||
+    descripcion === null ||
+    utilidades === null
+  ) {
+    return (
+      <div>
+        <br />
+        <br />
+        <h2>Conectando con el servidor</h2>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <PacmanLoader />
+      </div>
+    );
+  }
 
   return (
     <div id="container h-[100%] ">

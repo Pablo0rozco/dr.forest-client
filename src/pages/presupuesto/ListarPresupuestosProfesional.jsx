@@ -6,8 +6,10 @@ import {
   listarPresupuestosEmpresaService,
 } from "../../services/presupuestos.services";
 import { Link } from "react-router-dom";
+import PacmanLoader from "react-spinners/PacmanLoader";
+
 function ListarPresupuestosProfesional() {
-  const [presupuestoEmpresaList, setPresupuestoEmpresaList] = useState([]);
+  const [presupuestoEmpresaList, setPresupuestoEmpresaList] = useState(null);
 
   const navigate = useNavigate();
 
@@ -28,6 +30,22 @@ function ListarPresupuestosProfesional() {
   const formatearFecha = (fecha) => {
     fecha.split("-").reverse().join("-");
   };
+
+  if (presupuestoEmpresaList === null) {
+    return (
+      <div>
+        <br />
+        <br />
+        <h2>Conectando con el servidor</h2>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <PacmanLoader />
+      </div>
+    );
+  }
 
   return (
     <div className="PresupuestosEmpresa h-[100%] ">
