@@ -56,6 +56,7 @@ function DetallesS() {
 
   return (
     <div id="container h-[100%] ">
+    <div className="perfil-detail">
       <h1>&bull; {detalles.nombre} &bull;</h1>
 
       <img src={detalles.img} alt="" />
@@ -81,6 +82,8 @@ function DetallesS() {
           </button>
         </div>
       )}
+    </div>
+      
     </div>
   );
 }
