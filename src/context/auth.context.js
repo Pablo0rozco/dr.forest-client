@@ -74,7 +74,7 @@ function AuthWrapper(props) {
       <br /> <br />
         <h3>Verificando al usuario</h3>
 
-      <br /><br /><br />
+      <br /><br /><br /> <br /><br /><br /><br /><br />
         <ClimbingBoxLoader color={"grey"} size={50} />
       </div>
     );
