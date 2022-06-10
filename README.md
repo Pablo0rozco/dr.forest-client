@@ -37,6 +37,179 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   -  **Edit Profile Details** I can edit my details user profile.
 
 
+## Routes
+## Client Routes
+
+- / - Homepage - See all the offered Services
+- /auth/signup - Signup form
+- /auth/login - Login form
+- /presupuestos - My resquested budgets
+- /presupuestos/crear/:id - Ask for a budget
+- /servicios/:id/detalles - service detail
+- /perfil - my details
+- /editarPerfil - edit my details
+
+## Profesional Routes
+
+- / - Homepage - See all the offered Services
+- /auth/signup - Signup form
+- /auth/login - Login form
+- /presupuestos/empresa - See all the resquested budgets
+- /presupuestos/editar/:id - Answer the client request
+- /servicios/crear - Add a new service
+- /perfil - my details
+- /editarPerfil - edit my details
+
+
+
+## Pages
+- Error
+- NotFound
+- Home
+
+# AUTH
+- Login
+- Signup
+
+
+# PRESUPUESTO
+
+- DetallesPresupuesto
+- EditarPresupuesto
+- ListarPresupuesto
+- ListarPresupuestoProfesional
+- Presupuestos
+
+# PROFILE
+- Profile
+- ProfileEdit
+
+# SERVICIOS
+- CrearS
+- DetallesS
+- EditarS
+
+
+
+## Components
+
+- isPrivate
+- isUserClient
+- isProfesional
+- Navbar
+
+
+
+## Models
+
+Presupuesto Model
+
+```
+fecha - date // required
+provincia - String // required 
+poblacion - String // required
+calle - String // required 
+numero - Number // required
+piso - String // required 
+observaciones - String // required
+numEmpleados - Number // required 
+metro2 - Number // required
+precio - Number // required 
+servicioId - String // required
+estado - String // required // [ObjectID<ServiciosModel>]
+userId - Required // [ObjectID<UserModel>]
+ProfesionalId -  [ObjectID<ServicioModel>]
+```
+
+Servicios model
+
+```
+img - String // required
+nombre - String // required 
+breveDesc - String // required
+descripcion - String // required 
+utilidades - String // required
+idCreador -  [ObjectID<UserModel>]
+```
+User Model
+
+```  
+img - String // required
+username - String // required & unique
+email - String // required & unique
+password - String // required
+userType - String
+telf - Number
+pais - String
+provincia - String,
+poblacion - String,
+calle - String,
+piso - String,
+cif - String,
+rSocial - String,
+```
+## API Endpoints/Backend Routes
+
+- GET /auth/verify
+- POST /auth/signup
+  - body:
+    - email,
+    - password,
+    - username,
+    - cp,
+    - userType,
+    - pais,
+    - provincia,
+    - poblacion,
+    - calle,
+    - numero,
+    - piso,
+    - cif,
+    - rSocial,
+    - telf
+- POST /auth/login
+  - body:
+    - email
+    - password
+
+- POST /user/me/favorite
+  - body:
+    - restaurantId
+- DELETE /user/me/favorite/:restaurantId
+  - body: (empty)
+- GET /empresa
+- POST /presupuesto
+  - body:
+    - fecha,
+    - provincia,
+    - poblacion,
+    - calle,
+    - numero,
+    - piso,
+    - observaciones,
+    - numEmpleados,
+    - metro2,
+    - precio,
+    - servicioId,
+    - userId,
+    - fesionalId,
+- PATCH /presupuesto
+  - body:
+    - fecha,
+    - provincia,
+    - poblacion,
+    - calle,
+    - numero,
+    - piso,
+    - observaciones,
+    - numEmpleados,
+    - metro2,
+    - precio,
+    - servicioId,
+    - userId,
+    - fesionalId,
+
+
 In the project directory, you can run:
 
 ### `npm start`
