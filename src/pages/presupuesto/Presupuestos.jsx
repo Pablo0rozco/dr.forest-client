@@ -195,7 +195,7 @@ function Presupuestos() {
               {/* METROS CUADRADOS */}
               <div className="input">
                 <label for="number">Metros Cuadrados </label>
-                <input className="placeholder:text-black" type="number" placeholder="Metros cuadrados" value={form.metro2} onChange={handlePreFormChange} name="metro2"  required/>
+                <input type="number" placeholder="Metros cuadrados" value={form.metro2} onChange={handlePreFormChange} name="metro2"  required/>
               </div>
 
               
