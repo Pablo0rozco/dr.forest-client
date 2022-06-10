@@ -71,8 +71,11 @@ function AuthWrapper(props) {
   if (isLoadingUser === true) {
     return (
       <div className="App">
+      <br /> <br />
         <h3>Verificando al usuario</h3>
-        <ClimbingBoxLoader color={"green"} size={100} />
+
+      <br /><br /><br />
+        <ClimbingBoxLoader color={"grey"} size={50} />
       </div>
     );
   }
