@@ -1,8 +1,41 @@
-# Getting Started with Create React App
+# Dr. Forest
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It is a marketplace where any user can find and hire forestry services.
+
+## User Stories
+ **Two types of users: Client & Profesional*
+- **Signup:** As an anon I can sign up in the platform so that I can start seeing services.
+
+
+
+
+   **As a client user** i can do:
+
+  -  **Login:** I can login to the platform so that I can see my favorite restaurants
+  -  **Logout:** I can logout from the platform so no one else can use it
+  -  **List offered Services** I can see all the services are offered by Profesional Users.
+  -  **Service Details**  I can go inside the service & see the details.
+  -  **Request a budget** I can ask about the price & conditions in a specific service. 
+  -  **See a list of all Requested Budgets** I can see all my requested budgets.
+  -  **Delete and Edit Requested Budgets**  I can modify and delete any condition of my sended request budget.
+  -  **Profile Details** I can see my profile user.
+  -  **Edit Profile Details** I can edit my details user profile.
+
+   **As a profesional user** i can do:
+
+
+  -  **Login:** I can login to the platform so that I can see my favorite restaurants
+  -  **Logout:** I can logout from the platform so no one else can use it
+  -  **List offered services** I can see all the services are offered by Profesional Users.
+  -  **Create a new service** I can offer a new service to the community.
+  -  **See details, edit and Delete my created Services** The hole CRUD. 
+  -  **Manage the incoming requests**  I recieve the requests and edit price to allow it. Also i can refuse it.
+  -  **See a list of all services querys** See all the clients requets.
+  -  **Profile Details** I can see my profile user.
+  -  **Edit Profile Details** I can edit my details user profile.
+
 
 In the project directory, you can run:
 
