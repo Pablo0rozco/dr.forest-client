@@ -41,6 +41,7 @@ function Home() {
       <h1 className="nombre-app">DR. FOREST</h1>
 
       <h2 className="slogan-app">El bosque de soluciones ambientales</h2>
+      <br />
 
       {/* <p>En Dr. Forest nos tomamos muy en serio el cuidado de nuestro medio ambiente. Aquí podrás encontrar una gran cantidad de servicios relacionados con la naturaleza gracias a nuestra red nacional de profesionales cualificados</p> */}
 

@@ -59,15 +59,15 @@ function Profile() {
 
         {user.userType === "profesional" && (
           <div className="perfil-detail">
-            <p> {actualPerfil.pais}</p>
-            <p> {actualPerfil.provincia}</p>
-            <p> {actualPerfil.poblacion}</p>
-            <p> {actualPerfil.calle}</p>
-            <p> {actualPerfil.numero}</p>
-            <p> {actualPerfil.piso}</p>
-            <p> {actualPerfil.username}</p>
-            <p> {actualPerfil.cif}</p>
-            <p> {actualPerfil.rSocial}</p>
+            <p>País: {actualPerfil.pais}</p>
+            <p>Provincia: {actualPerfil.provincia}</p>
+            <p>Población {actualPerfil.poblacion}</p>
+            <p>Calle: {actualPerfil.calle}</p>
+            <p>Número {actualPerfil.numero}</p>
+            <p>Piso {actualPerfil.piso}</p>
+            <p>Nombre de usuario: {actualPerfil.username}</p>
+            <p>C.I.F: {actualPerfil.cif}</p>
+            <p>Razón Social: {actualPerfil.rSocial}</p>
           </div>
         )}
 
