@@ -61,7 +61,7 @@ function Login() {
         <form className="login-form" onSubmit={handleLogin}>
           <label>Email:</label>
           <input
-            className="bg-transparent text-color white"
+            className="email-input"
             type="email"
             name="email"
             value={email}
