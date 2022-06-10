@@ -86,7 +86,7 @@ function EditarS() {
   }
 
   return (
-    <div id="container h-[100%] ">
+    <div id="container" className="container">
       <div className="contact_form">
         <label>Imagen:</label>
         <input type="text" name="img" value={img} onChange={handleImgChange} />
