@@ -26,42 +26,40 @@ function Profile() {
   }
 
   return (
-    <div id="container">
-      
-    <div id="contact_form">
+    <div id="container h-[100%] ">
+      <div id="contact_form">
+        <h1>
+          &bull; <h1>PERFIL</h1> &bull;
+        </h1>
 
-    <h1>&bull; <h1>PERFIL</h1> &bull;</h1>
-      
-      <br />
-      <div>
-        <p> {actualPerfil.username}</p>
-        <p> {actualPerfil.email}</p>
-        <p> {actualPerfil.telf}</p>
-        <p> {actualPerfil.cp}</p>
-      </div>
-
-      {user.userType === "profesional" && (
+        <br />
         <div>
-          <p> {actualPerfil.pais}</p>
-          <p> {actualPerfil.provincia}</p>
-          <p> {actualPerfil.poblacion}</p>
-          <p> {actualPerfil.calle}</p>
-          <p> {actualPerfil.numero}</p>
-          <p> {actualPerfil.piso}</p>
           <p> {actualPerfil.username}</p>
-          <p> {actualPerfil.cif}</p>
-          <p> {actualPerfil.rSocial}</p>
+          <p> {actualPerfil.email}</p>
+          <p> {actualPerfil.telf}</p>
+          <p> {actualPerfil.cp}</p>
         </div>
-      )}
 
-      <br />
-    </div>
-      
-      
-      <div id="form_button">
-      <Link to={"/editarPerfil"}>Editar Perfil</Link>
+        {user.userType === "profesional" && (
+          <div>
+            <p> {actualPerfil.pais}</p>
+            <p> {actualPerfil.provincia}</p>
+            <p> {actualPerfil.poblacion}</p>
+            <p> {actualPerfil.calle}</p>
+            <p> {actualPerfil.numero}</p>
+            <p> {actualPerfil.piso}</p>
+            <p> {actualPerfil.username}</p>
+            <p> {actualPerfil.cif}</p>
+            <p> {actualPerfil.rSocial}</p>
+          </div>
+        )}
+
+        <br />
       </div>
-      
+
+      <div id="form_button">
+        <Link to={"/editarPerfil"}>Editar Perfil</Link>
+      </div>
     </div>
   );
 }

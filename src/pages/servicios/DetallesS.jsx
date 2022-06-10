@@ -42,7 +42,7 @@ function DetallesS() {
   }
 
   return (
-    <div id="container">
+    <div id="container h-[100%] ">
       <h1>&bull; {detalles.nombre} &bull;</h1>
 
       <img src={detalles.img} alt="" />

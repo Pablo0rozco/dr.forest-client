@@ -24,7 +24,7 @@ function Home() {
     return <h3>..loaidng</h3>;
   }
   return (
-    <div className="home-container">
+    <div className="h-[100%] ">
       <h1 className="nombre-app">DR. FOREST</h1>
 
       <h2 className="slogan-app">El bosque de soluciones ambientales</h2>
@@ -35,7 +35,10 @@ function Home() {
       <div className="card-container">
         {allServices.map((eachService) => {
           return (
-            <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-300 dark:border-gray-700  ">
+            <div
+              className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-300 dark:border-gray-700 "
+              id="home-card"
+            >
               <img
                 className="rounded-t-lg  w-full aspect-video "
                 src={eachService.img}
@@ -51,9 +54,11 @@ function Home() {
                   {eachService.breveDesc}
                 </p>
                 <p>Proveedor: {eachService.idCreador.rSocial}</p>
+
                 <Link
                   to={`/servicios/${eachService._id}/detalles`}
-                  class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  id=""
                 >
                   Ver Servicio
                   <svg
