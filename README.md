@@ -1,8 +1,214 @@
-# Getting Started with Create React App
+# Dr. Forest
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It is a marketplace where any user can find and hire forestry services.
+
+## User Stories
+ **Two types of users: Client & Profesional*
+- **Signup:** As an anon I can sign up in the platform so that I can start seeing services.
+
+
+
+
+   **As a client user** i can do:
+
+  -  **Login:** I can login to the platform so that I can see my favorite restaurants
+  -  **Logout:** I can logout from the platform so no one else can use it
+  -  **List offered Services** I can see all the services are offered by Profesional Users.
+  -  **Service Details**  I can go inside the service & see the details.
+  -  **Request a budget** I can ask about the price & conditions in a specific service. 
+  -  **See a list of all Requested Budgets** I can see all my requested budgets.
+  -  **Delete and Edit Requested Budgets**  I can modify and delete any condition of my sended request budget.
+  -  **Profile Details** I can see my profile user.
+  -  **Edit Profile Details** I can edit my details user profile.
+
+   **As a profesional user** i can do:
+
+
+  -  **Login:** I can login to the platform so that I can see my favorite restaurants
+  -  **Logout:** I can logout from the platform so no one else can use it
+  -  **List offered services** I can see all the services are offered by Profesional Users.
+  -  **Create a new service** I can offer a new service to the community.
+  -  **See details, edit and Delete my created Services** The hole CRUD. 
+  -  **Manage the incoming requests**  I recieve the requests and edit price to allow it. Also i can refuse it.
+  -  **See a list of all services querys** See all the clients requets.
+  -  **Profile Details** I can see my profile user.
+  -  **Edit Profile Details** I can edit my details user profile.
+
+
+## Routes
+## Client Routes
+
+- / - Homepage - See all the offered Services
+- /auth/signup - Signup form
+- /auth/login - Login form
+- /presupuestos - My resquested budgets
+- /presupuestos/crear/:id - Ask for a budget
+- /servicios/:id/detalles - service detail
+- /perfil - my details
+- /editarPerfil - edit my details
+
+## Profesional Routes
+
+- / - Homepage - See all the offered Services
+- /auth/signup - Signup form
+- /auth/login - Login form
+- /presupuestos/empresa - See all the resquested budgets
+- /presupuestos/editar/:id - Answer the client request
+- /servicios/crear - Add a new service
+- /perfil - my details
+- /editarPerfil - edit my details
+
+
+
+## Pages
+- Error
+- NotFound
+- Home
+
+# AUTH
+- Login
+- Signup
+
+
+# PRESUPUESTO
+
+- DetallesPresupuesto
+- EditarPresupuesto
+- ListarPresupuesto
+- ListarPresupuestoProfesional
+- Presupuestos
+
+# PROFILE
+- Profile
+- ProfileEdit
+
+# SERVICIOS
+- CrearS
+- DetallesS
+- EditarS
+
+
+
+## Components
+
+- isPrivate
+- isUserClient
+- isProfesional
+- Navbar
+
+
+
+## Models
+
+Presupuesto Model
+
+```
+fecha - date // required
+provincia - String // required 
+poblacion - String // required
+calle - String // required 
+numero - Number // required
+piso - String // required 
+observaciones - String // required
+numEmpleados - Number // required 
+metro2 - Number // required
+precio - Number // required 
+servicioId - String // required
+estado - String // required // [ObjectID<ServiciosModel>]
+userId - Required // [ObjectID<UserModel>]
+ProfesionalId -  [ObjectID<ServicioModel>]
+```
+
+Servicios model
+
+```
+img - String // required
+nombre - String // required 
+breveDesc - String // required
+descripcion - String // required 
+utilidades - String // required
+idCreador -  [ObjectID<UserModel>]
+```
+User Model
+
+```  
+img - String // required
+username - String // required & unique
+email - String // required & unique
+password - String // required
+userType - String
+telf - Number
+pais - String
+provincia - String,
+poblacion - String,
+calle - String,
+piso - String,
+cif - String,
+rSocial - String,
+```
+## API Endpoints/Backend Routes
+
+- GET /auth/verify
+- POST /auth/signup
+  - body:
+    - email,
+    - password,
+    - username,
+    - cp,
+    - userType,
+    - pais,
+    - provincia,
+    - poblacion,
+    - calle,
+    - numero,
+    - piso,
+    - cif,
+    - rSocial,
+    - telf
+- POST /auth/login
+  - body:
+    - email
+    - password
+
+- POST /user/me/favorite
+  - body:
+    - restaurantId
+- DELETE /user/me/favorite/:restaurantId
+  - body: (empty)
+- GET /empresa
+- POST /presupuesto
+  - body:
+    - fecha,
+    - provincia,
+    - poblacion,
+    - calle,
+    - numero,
+    - piso,
+    - observaciones,
+    - numEmpleados,
+    - metro2,
+    - precio,
+    - servicioId,
+    - userId,
+    - fesionalId,
+- PATCH /presupuesto
+  - body:
+    - fecha,
+    - provincia,
+    - poblacion,
+    - calle,
+    - numero,
+    - piso,
+    - observaciones,
+    - numEmpleados,
+    - metro2,
+    - precio,
+    - servicioId,
+    - userId,
+    - fesionalId,
+
 
 In the project directory, you can run:
 
