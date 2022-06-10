@@ -30,7 +30,7 @@ function ListarPresupuestosProfesional() {
   };
 
   return (
-    <div className="PresupuestosEmpresa">
+    <div className="PresupuestosEmpresa h-[100%] ">
       <h1>Tus Solicitudes</h1>
       <div className="card-container">
         {presupuestoEmpresaList.map((eachP) => {

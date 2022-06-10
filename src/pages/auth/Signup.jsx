@@ -90,169 +90,182 @@ function Signup() {
   };
 
   return (
-    <div>
-      <h1>Hazte miembro</h1>
+    <div className=" h-[100%]" id="form-container">
+      <div id="container">
+        <h1>Hazte miembro</h1>
 
-      <h3>Tipo de usuario</h3>
+        <h3>Tipo de usuario</h3>
 
-      <label>Cliente</label>
-      <input
-        id="checkC"
-        type="radio"
-        name="userType"
-        value="cliente"
-        onChange={handleUserTypeChange}
-      />
+        <label>Cliente</label>
+        <input
+          id="checkC"
+          type="radio"
+          name="userType"
+          value="cliente"
+          onChange={handleUserTypeChange}
+        />
 
-      <label>Profesional</label>
-      <input
-        id="checkP"
-        type="radio"
-        name="userType"
-        value="profesional"
-        onChange={handleUserTypeChange}
-      />
+        <label>Profesional</label>
+        <input
+          id="checkP"
+          type="radio"
+          name="userType"
+          value="profesional"
+          onChange={handleUserTypeChange}
+        />
 
-      {userType === "cliente" || userType === "profesional" ? (
-        <div>
-          <div class="relative z-0 w-full mb-6 group">
-            <label>Nombre de usuario:</label>
+        {userType === "cliente" || userType === "profesional" ? (
+          <div>
+            <div class="relative z- w-full mb-6 group  ">
+              <label>Nombre de usuario:</label>
+              <input
+                type="text"
+                name="username"
+                value={username}
+                className="placeholder:text-black"
+                placeholder="Introduce tu nombre de usuario"
+                onChange={handleUsernameChange}
+              />
+            </div>
+            <br />
+            <div class="relative z-0 w-full mb-6 group">
+              <label>Email:</label>
+              <input
+                type="email"
+                name="email"
+                value={email}
+                onChange={handleEmailChange}
+              />
+            </div>
+            <br />
+            <div class="relative z-0 w-full mb-6 group">
+              <label>Password:</label>
+              <input
+                type="password"
+                name="password"
+                value={password}
+                onChange={handlePasswordChange}
+              />
+            </div>
+            <br />
+            <div class="relative z-0 w-full mb-6 group">
+              <label>Teléfono:</label>
+              <input
+                type="tel"
+                name="telf"
+                value={telf}
+                onChange={handleTelfChange}
+              />
+            </div>
+            <br />
+            <div class="relative z-0 w-full mb-6 group">
+              <label>Código Postal:</label>
+              <input
+                type="text"
+                name="cp"
+                value={cp}
+                onChange={handleCpChange}
+              />
+            </div>
+          </div>
+        ) : (
+          <div></div>
+        )}
+
+        {userType === "profesional" ? (
+          <div>
+            <h2>
+              <b>Datos de la empresa:</b>
+            </h2>
+            <br />
+            <div class="relative z-0 w-full mb-6 group">
+              <label>País:</label>
+              <input
+                type="text"
+                name="pais"
+                value={pais}
+                onChange={handlePaisChange}
+              />
+            </div>
+            <br />
+            <div class="relative z-0 w-full mb-6 group">
+              <label>Provincia:</label>
+              <input
+                type="text"
+                name="provincia"
+                value={provincia}
+                onChange={handleProvinciaChange}
+              />
+            </div>
+            <br />
+            <div class="relative z-0 w-full mb-6 group">
+              <label>Población:</label>
+              <input
+                type="text"
+                name="poblacion"
+                value={poblacion}
+                onChange={handlePoblacionChange}
+              />
+            </div>
+            <br />
+            <div class="relative z-0 w-full mb-6 group">
+              <label>Calle:</label>
+              <input
+                type="text"
+                name="calle"
+                value={calle}
+                onChange={handleCalleChange}
+              />
+            </div>
+            <br />
+            <div class="relative z-0 w-full mb-6 group">
+              <label>Número:</label>
+              <input
+                type="text"
+                name="numero"
+                value={numero}
+                onChange={handleNumeroChange}
+              />
+            </div>
+            <br />
+
+            <label>Piso:</label>
             <input
               type="text"
-              name="username"
-              value={username}
-              onChange={handleUsernameChange}
+              name="piso"
+              value={piso}
+              onChange={handlePisoChange}
             />
-          </div>
-          <br />
-          <div class="relative z-0 w-full mb-6 group">
-            <label>Email:</label>
+            <br />
+            <label>CIF:</label>
             <input
-              type="email"
-              name="email"
-              value={email}
-              onChange={handleEmailChange}
+              type="text"
+              name="cif"
+              value={cif}
+              onChange={handleCifChange}
             />
-          </div>
-          <br />
-          <div class="relative z-0 w-full mb-6 group">
-            <label>Password:</label>
+            <br />
+            <label>Razón Social:</label>
             <input
-              type="password"
-              name="password"
-              value={password}
-              onChange={handlePasswordChange}
+              type="text"
+              name="rSocial"
+              value={rSocial}
+              onChange={handleRSocialChange}
             />
           </div>
-          <br />
-          <div class="relative z-0 w-full mb-6 group">
-            <label>Teléfono:</label>
-            <input
-              type="tel"
-              name="telf"
-              value={telf}
-              onChange={handleTelfChange}
-            />
-          </div>
-          <br />
-          <div class="relative z-0 w-full mb-6 group">
-            <label>Código Postal:</label>
-            <input type="text" name="cp" value={cp} onChange={handleCpChange} />
-          </div>
-        </div>
-      ) : (
-        <div></div>
-      )}
+        ) : (
+          <div></div>
+        )}
 
-      {userType === "profesional" ? (
-        <div>
-          <hr />
-          <h2>Datos de la empresa:</h2>
-          <div class="relative z-0 w-full mb-6 group">
-            <label>País:</label>
-            <input
-              type="text"
-              name="pais"
-              value={pais}
-              onChange={handlePaisChange}
-            />
+        {userType === "cliente" || userType === "profesional" ? (
+          <div id="form_button">
+            <button onClick={handleSignup}>Registrarse</button>
           </div>
-          <br />
-          <div class="relative z-0 w-full mb-6 group">
-            <label>Provincia:</label>
-            <input
-              type="text"
-              name="provincia"
-              value={provincia}
-              onChange={handleProvinciaChange}
-            />
-          </div>
-          <br />
-          <div class="relative z-0 w-full mb-6 group">
-            <label>Población:</label>
-            <input
-              type="text"
-              name="poblacion"
-              value={poblacion}
-              onChange={handlePoblacionChange}
-            />
-          </div>
-          <br />
-          <div class="relative z-0 w-full mb-6 group">
-            <label>Calle:</label>
-            <input
-              type="text"
-              name="calle"
-              value={calle}
-              onChange={handleCalleChange}
-            />
-          </div>
-          <br />
-          <div class="relative z-0 w-full mb-6 group">
-            <label>Número:</label>
-            <input
-              type="text"
-              name="numero"
-              value={numero}
-              onChange={handleNumeroChange}
-            />
-          </div>
-          <br />
-
-          <label>Piso:</label>
-          <input
-            type="text"
-            name="piso"
-            value={piso}
-            onChange={handlePisoChange}
-          />
-          <br />
-          <label>CIF:</label>
-          <input
-            type="text"
-            name="cif"
-            value={cif}
-            onChange={handleCifChange}
-          />
-          <br />
-          <label>Razón Social:</label>
-          <input
-            type="text"
-            name="rSocial"
-            value={rSocial}
-            onChange={handleRSocialChange}
-          />
-        </div>
-      ) : (
-        <div></div>
-      )}
-
-      {userType === "cliente" || userType === "profesional" ? (
-        <button onClick={handleSignup}>Registrarse</button>
-      ) : (
-        <div></div>
-      )}
-      {errorMessage !== null && <p>{errorMessage}</p>}
+        ) : (
+          <div></div>
+        )}
+        {errorMessage !== null && <p>{errorMessage}</p>}
+      </div>
     </div>
   );
 }

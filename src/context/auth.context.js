@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { verifyService } from "../services/auth.services";
+import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 
 const AuthContext = createContext();
 
@@ -23,17 +24,16 @@ function AuthWrapper(props) {
       setIsLoggedIn(true);
       setUser(response.data);
 
-      
       // return setIsLoggedIn(true)
       //! Setea si el usuario es cliente o profesional
 
       console.log(response.data);
       if (response.data.userType === "cliente") {
         setIsCliente(true);
-        setProfesional(false)
+        setProfesional(false);
       } else if (response.data.userType === "profesional") {
         setProfesional(true);
-        setIsCliente(false)
+        setIsCliente(false);
       } else {
         setProfesional(false);
         setIsCliente(false);
@@ -72,6 +72,7 @@ function AuthWrapper(props) {
     return (
       <div className="App">
         <h3>Verificando al usuario</h3>
+        <ClimbingBoxLoader color={"green"} size={100} />
       </div>
     );
   }

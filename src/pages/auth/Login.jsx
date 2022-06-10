@@ -3,12 +3,13 @@ import { loginService } from "../../services/auth.services";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context.js";
 import { Link } from "react-router-dom";
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 function Login() {
   const { authenticateUser } = useContext(AuthContext);
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
 
   const [errorMessage, setErrorMessage] = useState(null);
 
@@ -22,6 +23,15 @@ function Login() {
       email,
       password,
     };
+
+    if (email === null || password === null) {
+      return (
+        <div className="App">
+          <h3>Buscando respuesta con el servidor</h3>
+          <PacmanLoader color={"green"} size={100} />
+        </div>
+      );
+    }
 
     try {
       // validaremos al usuario
@@ -48,7 +58,7 @@ function Login() {
       <div className="card-container-login">
         <h5 class="">Accede a Dr.Forest</h5>
         <br />
-        <form className="" onSubmit={handleLogin}>
+        <form className="login-form" onSubmit={handleLogin}>
           <label>Email:</label>
           <input
             className="bg-transparent text-color white"
@@ -73,9 +83,7 @@ function Login() {
             placeholder="••••••••"
           />
 
-          <br />
-
-          {errorMessage !== null && <p>{errorMessage}</p>}
+          {errorMessage !== null && <p className="messagge">{errorMessage}</p>}
           <br />
           <button type="submit">Acceder</button>
         </form>

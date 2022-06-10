@@ -87,7 +87,7 @@ function ProfileEdit() {
   }
 
   return (
-    <div id="container">
+    <div id="container h-[100%] ">
       <div>
         {user.userType === "cliente" || user.userType === "profesional" ? (
           <div>

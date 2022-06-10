@@ -104,7 +104,7 @@ function CrearS() {
       <div className="observaciones">
                 <label for="observaciones">Descripción:</label>
                 <textarea name="descripcion" value={form.descripcion}
-        onChange={handleFormChange} placeholder="Describe el servicio de manera completa" id="message_input" cols="30" rows="5" required></textarea>
+        onChange={handleFormChange} className="placeholder:text-black" placeholder="Describe el servicio de manera completa" id="message_input" cols="30" rows="5" required></textarea>
               </div>    
 
 

@@ -63,50 +63,44 @@ function EditarS() {
   };
 
   return (
-    <div id="container">
-
+    <div id="container h-[100%] ">
       <div className="contact_form">
         <label>Imagen:</label>
-      <input type="text" name="img" value={img} onChange={handleImgChange} />
+        <input type="text" name="img" value={img} onChange={handleImgChange} />
       </div>
-      
+
       <br />
 
       <div className="name">
-         <label>Nombre:</label>
-      <input
-        type="text"
-        name="nombre"
-        value={nombre}
-        onChange={handleNombreChange}
-      />
+        <label>Nombre:</label>
+        <input
+          type="text"
+          name="nombre"
+          value={nombre}
+          onChange={handleNombreChange}
+        />
       </div>
 
-     
-      
       <div className="name">
         <label>Descripción breve:</label>
-              <input
-                type="text"
-                name="breveDesc"
-                value={breveDesc}
-                onChange={handleBreveDescChange}
-              />
-      </div>
-      
-      
-      <div className="observaciones">
-        <label>Descripción:</label>
-      <input
-        type="text"
-        name="descripcion"
-        value={descripcion}
-        onChange={handleDescripcionChange}
-      />
+        <input
+          type="text"
+          name="breveDesc"
+          value={breveDesc}
+          onChange={handleBreveDescChange}
+        />
       </div>
 
-      
-     
+      <div className="observaciones">
+        <label>Descripción:</label>
+        <input
+          type="text"
+          name="descripcion"
+          value={descripcion}
+          onChange={handleDescripcionChange}
+        />
+      </div>
+
       <label>Utilidades:</label>
       <input
         type="text"
@@ -115,8 +109,9 @@ function EditarS() {
         onChange={handleUtilidadesChange}
       />
       <br />
-      <div id="form_button"><button onClick={handleEditarServicio}>Guardar Cambios</button></div>
-      
+      <div id="form_button">
+        <button onClick={handleEditarServicio}>Guardar Cambios</button>
+      </div>
 
       {errorMessage !== null && <p>{errorMessage}</p>}
     </div>
