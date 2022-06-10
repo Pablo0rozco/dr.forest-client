@@ -4,9 +4,10 @@ import { listarPresupuestosService } from "../../services/presupuestos.services"
 import { AuthContext } from "../../context/auth.context";
 import { Link } from "react-router-dom";
 import PacmanLoader from "react-spinners/PacmanLoader";
-
+import PaymentIntent from "./PaymentIntent";
 function ListarPresupuesto() {
   const [presupuestoList, setPresupuestoList] = useState(null);
+  const [productToBuy, setProductToBuy] = useState(null);
   const { user } = useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -21,10 +22,14 @@ function ListarPresupuesto() {
       setPresupuestoList(response.data);
       console.log(response.data);
     } catch (error) {
+      console.log(error);
       navigate("/error");
     }
   };
   console.log(presupuestoList);
+
+  const handleBuy = (productToBuy) => {};
+
   if (presupuestoList === null) {
     return (
       <div>
@@ -75,6 +80,7 @@ function ListarPresupuesto() {
               Estado
             </th>
             <th></th>
+            {/* <th></th> */}
           </thead>
           <tbody>
             {presupuestoList.map((eachP) => {
@@ -100,11 +106,27 @@ function ListarPresupuesto() {
                       <button>Editar</button>
                     </Link>
                   </td>
+                  {/* <td>
+                    <button
+                      variant="outline-success"
+                      style={{ color: "purple" }}
+                      onClick={() => handleBuy(eachP)}
+                    >
+                      Comprar
+                    </button>
+                  </td> */}
                 </tr>
               );
             })}
           </tbody>
         </table>
+
+        {productToBuy && (
+          <>
+            <h3> Adquirir Servicio </h3>
+            <PaymentIntent productToBuy={productToBuy} />
+          </>
+        )}
       </div>
     </div>
   );

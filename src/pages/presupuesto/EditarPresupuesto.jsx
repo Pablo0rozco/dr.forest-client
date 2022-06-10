@@ -116,6 +116,15 @@ function EditarPresupuesto() {
     }
   };
 
+  const handleBorrarPresupuesto = async () => {
+    try {
+      await borrarPresupuestoService(id);
+      navigate("/presupuestos");
+    } catch (error) {
+      navigate("/error");
+    }
+  };
+
   if (
     fecha === null ||
     provincia === null ||
@@ -240,6 +249,10 @@ function EditarPresupuesto() {
           <div>
             <button id="form_button" onClick={handleEditarPresupuesto}>
               Editar Presupuesto
+            </button>
+            <br />
+            <button id="form_button" onClick={handleBorrarPresupuesto}>
+              Borrar presupuesto
             </button>
           </div>
         </div>
